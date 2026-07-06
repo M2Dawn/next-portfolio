@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 const navLinks = [
@@ -12,7 +12,6 @@ const navLinks = [
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const sentinelRef = useRef<HTMLDivElement>(null);
 
   // Use IntersectionObserver instead of banned window.addEventListener('scroll')
   useEffect(() => {
@@ -36,9 +35,6 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Sentinel for IntersectionObserver */}
-      <div ref={sentinelRef} className="absolute top-0 left-0 h-px w-full pointer-events-none" aria-hidden />
-
       <a href="#main" className="absolute -top-[100px] left-0 bg-brand text-white py-3 px-6 z-[9999] transition-[top] focus:top-0">
         Skip to content
       </a>
