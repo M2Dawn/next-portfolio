@@ -16,7 +16,18 @@ export default function Work() {
               Featured Work
             </div>
             <h2 className="font-heading text-[clamp(2.5rem,5vw,3.5rem)] font-bold tracking-tight mb-4 text-white">
-              Selected <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand via-purple-400 to-brand bg-[length:200%_auto] animate-gradient-text">Projects</span>
+              Selected{' '}
+              <span
+                className="animate-gradient-text"
+                style={{
+                  backgroundImage: 'linear-gradient(to right, #B8A4FF, #7C6EF9, #B8A4FF)',
+                  backgroundSize: '200% auto',
+                  WebkitBackgroundClip: 'text',
+                  backgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  color: 'transparent',
+                }}
+              >Projects</span>
             </h2>
             <p className="text-[1.1rem] text-text-2 max-w-2xl font-medium leading-relaxed">
               Engineering tools that solve real coordination problems &mdash; measured in hours saved, not features shipped.

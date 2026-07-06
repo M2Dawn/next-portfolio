@@ -49,7 +49,17 @@ export default function Hero() {
               Building the Tools <br className="hidden lg:block" />
               <span className="relative inline-block mt-1">
                 <span className="absolute -inset-2 bg-brand/20 blur-3xl rounded-full"></span>
-                <span className="relative bg-[linear-gradient(to_right,#B8A4FF,#9D8DF9,#7C6EF9,#B8A4FF)] bg-[length:200%_auto] bg-clip-text text-transparent animate-gradient-text">
+                <span
+                  className="relative animate-gradient-text"
+                  style={{
+                    backgroundImage: 'linear-gradient(to right, #B8A4FF, #7C6EF9, #B8A4FF)',
+                    backgroundSize: '200% auto',
+                    WebkitBackgroundClip: 'text',
+                    backgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    color: 'transparent',
+                  }}
+                >
                   BIM Teams Rely On.
                 </span>
               </span>
