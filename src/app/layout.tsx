@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { GoogleAnalytics } from '@next/third-parties/google';
 import "./globals.css";
-import { Manrope, Sora } from "next/font/google";
+import { IBM_Plex_Sans } from "next/font/google";
 import { cn } from "@/lib/utils";
 
-const manrope = Manrope({ subsets: ['latin'], variable: '--font-body' });
-const sora = Sora({ subsets: ['latin'], variable: '--font-heading-google', weight: ['400', '500', '600', '700', '800'] });
+const ibmBody = IBM_Plex_Sans({ subsets: ['latin'], variable: '--font-body', weight: ['400', '500', '600', '700'] });
+const ibmHeading = IBM_Plex_Sans({ subsets: ['latin'], variable: '--font-heading-google', weight: ['400', '500', '600', '700'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://hossam-aec.vercel.app'),
@@ -50,7 +50,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("font-sans", manrope.variable, sora.variable)}>
+    <html lang="en" className={cn("font-sans", ibmBody.variable, ibmHeading.variable)}>
       <body>
         <div className="bg-noise"></div>
         {children}
