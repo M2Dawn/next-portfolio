@@ -30,7 +30,7 @@ export default function Navbar() {
               : 'bg-transparent border-transparent py-6 mt-0'
           }`}
         >
-          <Link href="/" className="text-[1.05rem] font-bold text-white tracking-tight flex items-center gap-3 group" translate="no">
+          <Link href="/" className="font-heading text-[1.05rem] font-bold text-white tracking-tight flex items-center gap-3 group" translate="no">
             <span className="w-2 h-2 rounded-full bg-brand shadow-[0_0_12px_rgba(91,141,243,0.9)] group-hover:scale-150 transition-all duration-300"></span>
             Hossam Sabry
           </Link>

@@ -72,26 +72,26 @@ export default function Work() {
 
           <Reveal className="col-span-1 md:col-span-7 h-full" delay={100}>
             {/* Card 2: Clash Detection Dashboard - LEFT HALF */}
-            <SpotlightCard className="h-full rounded-[1.5rem]" spotlightColor="rgba(168, 85, 247, 0.15)">
+            <SpotlightCard className="h-full rounded-[1.5rem]" spotlightColor="rgba(91, 141, 243, 0.15)">
               <a href="/live-demos/clash-dashboard/index.html?v=2" target="_blank" rel="noopener noreferrer" className="group h-full bg-[#0A0A0C] border border-white/5 rounded-[1.5rem] p-8 lg:p-10 flex flex-col relative overflow-hidden hover:bg-[#0F0F13] hover:border-white/10 hover:-translate-y-1 transition-all duration-500 shadow-2xl">
               <div className="flex items-center justify-between mb-6">
-                <span className="text-[10px] font-mono uppercase tracking-[0.15em] text-purple-400 font-bold">JavaScript &middot; Chart.js</span>
-                <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white group-hover:bg-purple-500 group-hover:border-purple-500 transition-all duration-300 group-hover:scale-110">
+                <span className="text-[10px] font-mono uppercase tracking-[0.15em] text-brand-light font-bold">JavaScript &middot; Chart.js</span>
+                <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white group-hover:bg-brand group-hover:border-brand transition-all duration-300 group-hover:scale-110">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
                 </div>
               </div>
-              <h3 className="text-2xl font-extrabold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-purple-300 transition-all">Clash Detection Dashboard</h3>
+              <h3 className="font-heading text-2xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-brand-light transition-all">Clash Detection Dashboard</h3>
               <p className="text-[0.95rem] text-text-2 leading-relaxed mb-8 font-medium">
                 Web dashboard that ingests Navisworks clash data, visualizes severity by discipline, and auto-generates coordination reports.
               </p>
               
               <div className="grid grid-cols-2 gap-4 mb-8 border-t border-white/5 pt-6">
                 <div>
-                  <div className="text-2xl font-black text-white">40<span className="text-purple-400">%</span></div>
+                  <div className="text-2xl font-black text-white">40<span className="text-brand">%</span></div>
                   <div className="text-[10px] text-text-3 font-bold uppercase tracking-[0.15em] mt-1">Faster Prep</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-black text-white">5<span className="text-purple-400">+</span></div>
+                  <div className="text-2xl font-black text-white">5<span className="text-brand">+</span></div>
                   <div className="text-[10px] text-text-3 font-bold uppercase tracking-[0.15em] mt-1">Active Projects</div>
                 </div>
               </div>
