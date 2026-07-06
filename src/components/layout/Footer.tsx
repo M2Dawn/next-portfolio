@@ -4,11 +4,11 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#050507] border-t border-white/5 relative overflow-hidden">
+    <footer className="bg-[#000000] border-t border-white/5 relative overflow-hidden">
       {/* Grand Finale CTA */}
       <div className="relative py-24 md:py-32 overflow-hidden border-b border-white/5">
         <div className="absolute inset-0 z-0 pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] md:w-[60%] h-[60%] rounded-full bg-[radial-gradient(circle,rgba(124,110,249,0.15)_0%,transparent_70%)] blur-[100px]"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] md:w-[60%] h-[60%] rounded-full bg-[radial-gradient(circle,rgba(124,110,249,0.05)_0%,transparent_70%)] blur-[100px]"></div>
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_10%,transparent_100%)] opacity-30"></div>
         </div>
         

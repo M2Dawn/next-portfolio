@@ -4,9 +4,12 @@ import Reveal from '@/components/ui/Reveal';
 import SpotlightCard from '@/components/ui/SpotlightCard';
 export default function Work() {
   return (
-    <section className="py-24 bg-[#050507] relative overflow-hidden" id="work">
-      {/* Background Deep Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand/10 blur-[120px] rounded-full pointer-events-none z-0"></div>
+    <section className="py-24 bg-[#050505] relative overflow-hidden" id="work">
+      {/* Background Noise Texture */}
+      <div className="bg-noise"></div>
+
+      {/* Background Deep Glow - highly dimmed */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand/5 blur-[120px] rounded-full pointer-events-none z-0"></div>
 
       <div className="max-w-[1200px] mx-auto px-6 w-full relative z-10">
         <Reveal>

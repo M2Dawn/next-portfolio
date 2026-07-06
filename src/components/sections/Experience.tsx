@@ -1,13 +1,41 @@
-﻿import Reveal from '@/components/ui/Reveal';
+import Reveal from '@/components/ui/Reveal';
+
+const experiences = [
+  {
+    period: "Apr 2025 — Present",
+    role: "BIM Automation Engineer",
+    company: "Independent Consultant",
+    description: "Architecting custom Revit API plugins, scalable Dynamo systems, and full-stack coordination dashboards for leading AEC firms. Focused strictly on replacing manual data entry with production-grade automation.",
+    tags: ["Revit API", "C# / WPF", "Dynamo", "React / Next.js"]
+  },
+  {
+    period: "Jan 2025 — Present",
+    role: "BIM Coordinator",
+    company: "Multi-discipline Construction Projects",
+    description: "Directing clash detection workflows, MEP coordination, and data extraction pipelines across large-scale commercial projects using Navisworks and custom telemetry tools.",
+    tags: ["Navisworks", "Clash Detection", "4D Simulation"]
+  },
+  {
+    period: "Jul 2024 — Dec 2024",
+    role: "BIM Technician",
+    company: "Engineering Consultancy",
+    description: "Managed 3D structural modeling and documentation in Revit. Identified manual drafting bottlenecks and developed the initial batch of Python and Dynamo automation scripts that catalyzed the firm's transition into automated BIM delivery.",
+    tags: ["Revit", "Dynamo", "Python"]
+  }
+];
 
 export default function Experience() {
   return (
-    <section className="relative py-32 bg-[#050507] overflow-hidden" id="experience">
+    <section className="relative py-32 bg-[#050505] overflow-hidden" id="experience">
       
-      {/* Background Glows */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-[40%] right-[5%] w-[40%] h-[40%] rounded-full bg-[radial-gradient(circle,rgba(124,110,249,0.06)_0%,transparent_60%)] blur-[100px]"></div>
-      </div>
+      {/* Background - Isometric Dot Matrix */}
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-20"
+        style={{
+          backgroundImage: 'radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px)',
+          backgroundSize: '24px 24px',
+          maskImage: 'radial-gradient(ellipse 80% 80% at 50% 50%, #000 20%, transparent 100%)'
+        }}
+      ></div>
 
       <div className="max-w-[1000px] mx-auto px-6 w-full relative z-10">
         <Reveal>
@@ -15,82 +43,61 @@ export default function Experience() {
             <span className="w-1.5 h-1.5 rounded-full bg-brand"></span>
             <span className="text-[10px] font-mono uppercase tracking-[0.15em] text-text-2 font-bold">Background</span>
           </div>
-          <h2 className="font-heading text-[clamp(2.5rem,5vw,3.5rem)] font-bold tracking-tight mb-16 text-white">
+          <h2 className="font-heading text-[clamp(2.5rem,5vw,3.5rem)] font-bold tracking-tight mb-20 text-white">
             Experience
           </h2>
         </Reveal>
         
-        <div className="relative pl-10 md:pl-12 max-w-[700px]">
-          {/* Glowing Vertical Line */}
-          <div className="absolute left-0 top-3 bottom-0 w-px bg-gradient-to-b from-brand via-white/10 to-transparent"></div>
+        {/* Stacked Cards Container */}
+        <div className="relative flex flex-col gap-8 pb-10">
+          {experiences.map((exp, index) => (
+            <div 
+              key={index}
+              className="sticky top-24 md:top-32 w-full transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]"
+              style={{
+                top: `calc(6rem + ${index * 1.5}rem)`,
+                zIndex: index + 10
+              }}
+            >
+              <Reveal delay={index * 100}>
+                {/* Double-Bezel Card Design */}
+                <div className="group relative p-[2px] rounded-3xl bg-white/[0.02] border border-white/5 shadow-2xl backdrop-blur-2xl overflow-hidden hover:border-brand/20 transition-all duration-500">
+                  
+                  {/* Subtle inner card glow */}
+                  <div className="absolute top-0 left-1/4 right-1/4 h-[1px] bg-gradient-to-r from-transparent via-brand/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
 
-          <div className="relative pb-16">
-            <Reveal delay={100}>
-              {/* Glowing Dot with Pulse */}
-              <div className="absolute -left-[45px] md:-left-[53px] top-1.5 flex items-center justify-center w-[11px] h-[11px]">
-                <div className="absolute w-[22px] h-[22px] rounded-full bg-brand/30 animate-[ping_3s_cubic-bezier(0,0,0.2,1)_infinite]"></div>
-                <div className="relative w-full h-full rounded-full bg-brand shadow-[0_0_12px_rgba(124,110,249,0.8)] border-2 border-[#050507]"></div>
-              </div>
-              
-              <div className="group bg-[#0A0A0C] border border-white/5 rounded-2xl p-6 lg:p-8 hover:bg-[#0F0F13] hover:border-brand/20 transition-all duration-300">
-                <p className="text-[13px] font-mono font-semibold text-brand mb-2">Apr 2025 &mdash; Present</p>
-                <h3 className="text-xl font-bold mb-1 text-white">BIM Automation Engineer</h3>
-                <p className="text-[15px] text-text-2 mb-4 font-medium">Independent Consultant</p>
-                <p className="text-[15px] text-text-3 leading-relaxed mb-6">
-                  Architecting custom Revit API plugins, scalable Dynamo systems, and full-stack coordination dashboards for leading AEC firms. Focused strictly on replacing manual data entry with production-grade automation.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-md text-[11px] font-mono text-text-2">Revit API</span>
-                  <span className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-md text-[11px] font-mono text-text-2">C# / WPF</span>
-                  <span className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-md text-[11px] font-mono text-text-2">Dynamo</span>
-                  <span className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-md text-[11px] font-mono text-text-2">React / Next.js</span>
+                  <div className="bg-[#0A0A0A] rounded-[calc(1.5rem-2px)] p-8 md:p-10 h-full w-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] flex flex-col md:flex-row gap-6 md:gap-12">
+                    
+                    {/* Left Column: Period & Company */}
+                    <div className="md:w-1/3 shrink-0">
+                      <div className="inline-block px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[12px] font-mono font-semibold text-brand mb-4">
+                        {exp.period}
+                      </div>
+                      <h4 className="text-[15px] text-text-2 font-medium leading-snug">
+                        {exp.company}
+                      </h4>
+                    </div>
+
+                    {/* Right Column: Role & Description */}
+                    <div className="md:w-2/3">
+                      <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-brand-light transition-colors duration-500">{exp.role}</h3>
+                      <p className="text-[15px] text-text-3 leading-relaxed mb-8">
+                        {exp.description}
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        {exp.tags.map((tag, tIndex) => (
+                          <span key={tIndex} className="px-3 py-1.5 bg-[#121212] border border-white/5 rounded-md text-[12px] font-mono text-text-2 shadow-inner">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    
+                  </div>
                 </div>
-              </div>
-            </Reveal>
-          </div>
-
-          <div className="relative pb-16">
-            <Reveal delay={200}>
-              {/* Subtle Dot */}
-              <div className="absolute -left-[43px] md:-left-[51px] top-1.5 w-[7px] h-[7px] rounded-full bg-white/20 border-2 border-[#050507]"></div>
-              
-              <div className="group bg-transparent border border-transparent rounded-2xl p-6 lg:p-8 hover:bg-[#0A0A0C] hover:border-white/5 transition-all duration-300 -ml-6 lg:-ml-8">
-                <p className="text-[13px] font-mono font-semibold text-text-3 mb-2 group-hover:text-text-2 transition-colors">Jan 2025 &mdash; Present</p>
-                <h3 className="text-xl font-bold mb-1 text-white/90 group-hover:text-white transition-colors">BIM Coordinator</h3>
-                <p className="text-[15px] text-text-2 mb-4 font-medium">Multi-discipline Construction Projects</p>
-                <p className="text-[15px] text-text-3 leading-relaxed mb-6">
-                  Directing clash detection workflows, MEP coordination, and data extraction pipelines across large-scale commercial projects using Navisworks and custom telemetry tools.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-md text-[11px] font-mono text-text-3 group-hover:text-text-2">Navisworks</span>
-                  <span className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-md text-[11px] font-mono text-text-3 group-hover:text-text-2">Clash Detection</span>
-                  <span className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-md text-[11px] font-mono text-text-3 group-hover:text-text-2">4D Simulation</span>
-                </div>
-              </div>
-            </Reveal>
-          </div>
-
-          <div className="relative pb-16">
-            <Reveal delay={300}>
-              {/* Subtle Dot */}
-              <div className="absolute -left-[43px] md:-left-[51px] top-1.5 w-[7px] h-[7px] rounded-full bg-white/20 border-2 border-[#050507]"></div>
-              
-              <div className="group bg-transparent border border-transparent rounded-2xl p-6 lg:p-8 hover:bg-[#0A0A0C] hover:border-white/5 transition-all duration-300 -ml-6 lg:-ml-8">
-                <p className="text-[13px] font-mono font-semibold text-text-3 mb-2 group-hover:text-text-2 transition-colors">Jul 2024 &mdash; Dec 2024</p>
-                <h3 className="text-xl font-bold mb-1 text-white/90 group-hover:text-white transition-colors">BIM Technician</h3>
-                <p className="text-[15px] text-text-2 mb-4 font-medium">Engineering Consultancy</p>
-                <p className="text-[15px] text-text-3 leading-relaxed mb-6">
-                  Managed 3D structural modeling and documentation in Revit. Identified manual drafting bottlenecks and developed the initial batch of Python and Dynamo automation scripts that catalyzed the firm&apos;s transition into automated BIM delivery.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-md text-[11px] font-mono text-text-3 group-hover:text-text-2">Revit</span>
-                  <span className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-md text-[11px] font-mono text-text-3 group-hover:text-text-2">Dynamo</span>
-                  <span className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-md text-[11px] font-mono text-text-3 group-hover:text-text-2">Python</span>
-                </div>
-              </div>
-            </Reveal>
-          </div>
-
+              </Reveal>
+            </div>
+          ))}
         </div>
       </div>
     </section>

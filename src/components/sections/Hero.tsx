@@ -6,22 +6,22 @@ import Reveal from '@/components/ui/Reveal';
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden pt-24 pb-20 md:pt-28 md:pb-32 min-h-[100dvh] flex items-center bg-[#050507]" id="hero">
+    <section className="relative overflow-hidden pt-24 pb-20 md:pt-28 md:pb-32 min-h-[100dvh] flex items-center bg-[#000000]" id="hero">
       
       {/* Background ΓÇö Blueprint AEC Grid */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        {/* Primary blue glow ΓÇö committed brand identity */}
-        <div className="absolute -top-[20%] -left-[10%] w-[55%] h-[55%] rounded-full bg-[radial-gradient(circle,rgba(124,110,249,0.2)_0%,transparent_65%)] blur-[100px]"></div>
-        <div className="absolute top-[30%] -right-[5%] w-[45%] h-[45%] rounded-full bg-[radial-gradient(circle,rgba(124,110,249,0.1)_0%,transparent_65%)] blur-[120px]"></div>
+        {/* Subtle glow — significantly dimmed for Machined Obsidian look */}
+        <div className="absolute -top-[20%] -left-[10%] w-[55%] h-[55%] rounded-full bg-[radial-gradient(circle,rgba(124,110,249,0.05)_0%,transparent_65%)] blur-[100px]"></div>
+        <div className="absolute top-[30%] -right-[5%] w-[45%] h-[45%] rounded-full bg-[radial-gradient(circle,rgba(124,110,249,0.03)_0%,transparent_65%)] blur-[120px]"></div>
       </div>
       {/* Blueprint grid ΓÇö architectural crosshair pattern */}
       <div className="absolute inset-0 pointer-events-none z-0"
         style={{
           backgroundImage: `
-            linear-gradient(to right, rgba(124,110,249,0.06) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(124,110,249,0.06) 1px, transparent 1px),
-            linear-gradient(to right, rgba(124,110,249,0.03) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(124,110,249,0.03) 1px, transparent 1px)
+            linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px),
+            linear-gradient(to right, rgba(255,255,255,0.01) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255,255,255,0.01) 1px, transparent 1px)
           `,
           backgroundSize: '96px 96px, 96px 96px, 24px 24px, 24px 24px',
           maskImage: 'radial-gradient(ellipse 90% 80% at 50% 50%, #000 20%, transparent 100%)'
