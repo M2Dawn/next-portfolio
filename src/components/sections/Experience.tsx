@@ -80,7 +80,7 @@ export default function Experience() {
                 <h3 className="text-xl font-bold mb-1 text-white/90 group-hover:text-white transition-colors">BIM Technician</h3>
                 <p className="text-[15px] text-text-2 mb-4 font-medium">Engineering Consultancy</p>
                 <p className="text-[15px] text-text-3 leading-relaxed mb-6">
-                  Managed 3D structural modeling and documentation in Revit. Identified manual drafting bottlenecks and developed the initial batch of Python and Dynamo automation scripts that catalyzed the firm's transition into automated BIM delivery.
+                  Managed 3D structural modeling and documentation in Revit. Identified manual drafting bottlenecks and developed the initial batch of Python and Dynamo automation scripts that catalyzed the firm&apos;s transition into automated BIM delivery.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <span className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-md text-[11px] font-mono text-text-3 group-hover:text-text-2">Revit</span>

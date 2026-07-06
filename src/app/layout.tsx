@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 const geist = Geist({subsets:['latin'],variable:'--font-geist'});
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://hossam-aec.vercel.app'),
   title: 'Hossam Sabry | BIM Automation Engineer',
   description: 'Portfolio of Hossam Sabry, a BIM Automation Engineer specializing in Revit API, Dynamo, and Construction Automation.',
   icons: {
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Hossam Sabry | BIM Automation Engineer',
     description: 'Portfolio of Hossam Sabry, a BIM Automation Engineer specializing in Revit API, Dynamo, and Construction Automation.',
-    url: 'https://hossamsabry.com', // Replace with real domain
+    url: 'https://hossam-aec.vercel.app',
     siteName: 'Hossam Sabry Portfolio',
     images: [
       {
