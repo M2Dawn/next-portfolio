@@ -13,9 +13,8 @@ const navLinks = [
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Use IntersectionObserver instead of banned window.addEventListener('scroll')
+  // Lock body scroll when mobile menu is open
   useEffect(() => {
-    // Lock body scroll when mobile menu is open
     if (mobileMenuOpen) {
       document.body.style.overflow = 'hidden';
     } else {
