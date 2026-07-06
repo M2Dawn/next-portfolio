@@ -4,7 +4,7 @@ export default function Expertise() {
   return (
     <section className="relative py-32 bg-[#050507] overflow-hidden border-t border-white/5" id="expertise">
       
-      {/* Deep Background Glows ΓÇö blue only */}
+      {/* Background Glows */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-[10%] left-[20%] w-[40%] h-[40%] rounded-full bg-[radial-gradient(circle,rgba(124,110,249,0.07)_0%,transparent_60%)] blur-[120px]"></div>
         <div className="absolute bottom-[20%] right-[10%] w-[30%] h-[50%] rounded-full bg-[radial-gradient(circle,rgba(124,110,249,0.05)_0%,transparent_60%)] blur-[100px]"></div>
@@ -24,9 +24,9 @@ export default function Expertise() {
           </p>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
           
-          {/* Card 1 ΓÇö default position */}
+          {/* Card 1 — Revit API */}
           <Reveal delay={100} className="h-full">
             <SpotlightCard className="h-full rounded-[1.5rem]" spotlightColor="rgba(124,110,249,0.15)">
               <div className="group bg-[#0A0A0C] border border-white/5 rounded-[1.5rem] p-8 lg:p-10 flex flex-col hover:bg-[#0F0F13] hover:border-brand/30 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(124,110,249,0.12)] transition-all duration-500 h-full relative overflow-hidden">
@@ -37,7 +37,7 @@ export default function Expertise() {
               </div>
               
               <div className="w-full h-1 bg-white/5 rounded-full mb-8 overflow-hidden">
-                <div className="h-full bg-gradient-to-r from-brand to-purple-500 relative" style={{ width: '92%' }}>
+                <div className="h-full relative" style={{ width: '92%', background: 'linear-gradient(to right, #7C6EF9, #A89FF8)' }}>
                   <div className="absolute inset-0 bg-white/20 animate-[scanlineMove_2s_linear_infinite]"></div>
                 </div>
               </div>
@@ -61,9 +61,9 @@ export default function Expertise() {
             </SpotlightCard>
           </Reveal>
 
-          {/* Card 2 ΓÇö elevated upward to break the flat grid */}
-          <Reveal delay={200} className="h-full md:-translate-y-6">
-            <SpotlightCard className="h-full rounded-[1.5rem]" spotlightColor="rgba(124,110,249,0.2)">
+          {/* Card 2 — Visual Programming (aligned with others, no translate offset) */}
+          <Reveal delay={200} className="h-full">
+            <SpotlightCard className="h-full rounded-[1.5rem]" spotlightColor="rgba(124,110,249,0.15)">
               <div className="group bg-[#0A0A0C] border border-white/5 rounded-[1.5rem] p-8 lg:p-10 flex flex-col hover:bg-[#0F0F13] hover:border-brand/30 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(124,110,249,0.15)] transition-all duration-500 h-full relative overflow-hidden">
               <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:via-brand/50 transition-colors duration-500"></div>
               
@@ -72,7 +72,7 @@ export default function Expertise() {
               </div>
               
               <div className="w-full h-1 bg-white/5 rounded-full mb-8 overflow-hidden">
-                <div className="h-full bg-gradient-to-r from-brand via-violet-400 to-brand-light relative" style={{ width: '96%' }}></div>
+                <div className="h-full relative" style={{ width: '96%', background: 'linear-gradient(to right, #7C6EF9, #A89FF8)' }}></div>
               </div>
               
               <h3 className="font-heading text-xl font-bold text-white mb-4">Visual Programming</h3>
@@ -89,17 +89,18 @@ export default function Expertise() {
             </SpotlightCard>
           </Reveal>
 
+          {/* Card 3 — BIM Coordination (unified brand accent) */}
           <Reveal delay={300} className="h-full">
-            <SpotlightCard className="h-full rounded-[1.5rem]" spotlightColor="rgba(6, 182, 212, 0.15)">
-              <div className="group bg-[#0A0A0C] border border-white/5 rounded-[1.5rem] p-8 lg:p-10 flex flex-col hover:bg-[#0F0F13] hover:border-cyan-500/30 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(6,182,212,0.12)] transition-all duration-500 h-full relative overflow-hidden">
-              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:via-cyan-500/50 transition-colors duration-500"></div>
+            <SpotlightCard className="h-full rounded-[1.5rem]" spotlightColor="rgba(124,110,249,0.15)">
+              <div className="group bg-[#0A0A0C] border border-white/5 rounded-[1.5rem] p-8 lg:p-10 flex flex-col hover:bg-[#0F0F13] hover:border-brand/30 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(124,110,249,0.12)] transition-all duration-500 h-full relative overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:via-brand/50 transition-colors duration-500"></div>
               
-              <div className="w-14 h-14 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-white mb-8 group-hover:scale-110 group-hover:text-cyan-400 transition-all duration-500 group-hover:shadow-[0_0_20px_rgba(6,182,212,0.2)]">
+              <div className="w-14 h-14 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-white mb-8 group-hover:scale-110 group-hover:text-brand transition-all duration-500 group-hover:shadow-[0_0_20px_rgba(124,110,249,0.2)]">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
               </div>
               
               <div className="w-full h-1 bg-white/5 rounded-full mb-8 overflow-hidden">
-                <div className="h-full bg-gradient-to-r from-cyan-400 to-blue-500 relative" style={{ width: '85%' }}></div>
+                <div className="h-full relative" style={{ width: '85%', background: 'linear-gradient(to right, #7C6EF9, #A89FF8)' }}></div>
               </div>
               
               <h3 className="font-heading text-xl font-bold text-white mb-4">BIM Coordination</h3>
@@ -121,4 +122,3 @@ export default function Expertise() {
     </section>
   );
 }
-
