@@ -14,7 +14,7 @@ export default function Footer() {
         
         <div className="max-w-[800px] mx-auto px-6 w-full relative z-10 flex flex-col items-center text-center">
           <h2 className="font-heading text-[clamp(2.5rem,5vw,4rem)] font-bold tracking-tight mb-6 text-white leading-tight">
-            Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-light via-white/90 to-brand-light bg-[length:200%_auto] animate-auroraWave">Automate?</span>
+            Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B8A4FF] via-[#7C6EF9] to-[#B8A4FF] bg-[length:200%_auto] animate-gradient-text">Automate?</span>
           </h2>
           <p className="text-[1.1rem] md:text-[1.25rem] text-text-2 mb-10 leading-relaxed font-medium max-w-[600px]">
             Stop losing hundreds of hours to repetitive modeling tasks. Let&apos;s build a custom toolkit that lets your team focus on engineering, not clicking.
