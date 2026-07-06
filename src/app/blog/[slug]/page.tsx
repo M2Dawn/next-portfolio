@@ -51,7 +51,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           </div>
         </Reveal>
 
-        <Reveal delay={100}>
+        <Reveal delay={100} threshold={0}>
           <div className="prose prose-invert prose-brand max-w-none">
             <MarkdownRenderer content={blog.content} />
           </div>

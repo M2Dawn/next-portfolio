@@ -6,9 +6,10 @@ interface RevealProps {
   children: ReactNode;
   className?: string;
   delay?: number;
+  threshold?: number;
 }
 
-export default function Reveal({ children, className = '', delay = 0 }: RevealProps) {
+export default function Reveal({ children, className = '', delay = 0, threshold = 0.1 }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -20,7 +21,7 @@ export default function Reveal({ children, className = '', delay = 0 }: RevealPr
           observer.unobserve(entry.target);
         }
       },
-      { root: null, rootMargin: '0px', threshold: 0.1 }
+      { root: null, rootMargin: '0px', threshold }
     );
 
     if (ref.current) {

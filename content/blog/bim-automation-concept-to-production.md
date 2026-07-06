@@ -1,4 +1,4 @@
----
+﻿---
 title: "BIM Automation: From Concept to Production"
 description: "Learn how to take your BIM automation projects from prototype to production-ready solutions that teams can rely on"
 date: "2025-12-07"
@@ -37,7 +37,7 @@ This is where most prototypes fail in production. Your tool might be technically
 **UI/UX Principles:**
 
 *   **Minimize options:** Every checkbox or dropdown is a decision point. Reduce cognitive load
-*   **Use sensible defaults:** Pre-fill the most common settings so users just click "Go"
+*   **Use sensible defaults:** Pre-fill the most common settings so users just click "G✓
 *   **Clear labeling:** "Export Views" is better than "Batch DWG Generation"
 *   **Progress feedback:** Show what's happening. "Processing view 5 of 12..." is reassuring
 *   **Helpful error messages:** "File not found: C:\\Projects\\Model.rvt" is better than "Error 0x80004005"
