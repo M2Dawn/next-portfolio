@@ -44,10 +44,7 @@ export default function Hero() {
           </Reveal>
           
           <Reveal delay={100}>
-            {/* Name — per interactive-portfolio Hero Formula: [Your name] */}
-            <p className="text-[13px] font-mono font-semibold tracking-[0.15em] uppercase text-text-3 mb-3">
-              Hossam Sabry
-            </p>
+
             {/* Main Headline */}
             <h1 className="font-heading text-[clamp(2.25rem,4vw,3.75rem)] font-bold leading-[1.08] tracking-[-0.03em] mb-6 text-white">
               Building the Tools <br className="hidden lg:block" />
