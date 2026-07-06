@@ -54,6 +54,18 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         <div className="prose prose-lg prose-invert prose-brand max-w-none text-[1.05rem] leading-relaxed md:leading-loose">
           <MarkdownRenderer content={blog.content} />
         </div>
+
+        <Reveal threshold={0}>
+          <div className="mt-20 pt-10 border-t border-border-1 flex justify-center">
+            <Link 
+              href="/blog" 
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-brand/10 border border-white/10 hover:border-brand/30 text-text-1 hover:text-brand transition-all rounded-full font-semibold text-[14px]"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+              Back to Blog & Articles
+            </Link>
+          </div>
+        </Reveal>
       </div>
     </article>
   );
