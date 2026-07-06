@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Script from "next/script";
+import { GoogleAnalytics } from '@next/third-parties/google';
 import "./globals.css";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
@@ -54,17 +54,7 @@ export default function RootLayout({
         {children}
         
         {/* Google Analytics 4 */}
-        <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-MWW9X0CJQF" />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-MWW9X0CJQF', {
-              page_path: window.location.pathname,
-            });
-          `}
-        </Script>
+        <GoogleAnalytics gaId="G-MWW9X0CJQF" />
       </body>
     </html>
   );
