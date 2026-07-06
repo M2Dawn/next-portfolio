@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { GoogleAnalytics } from '@next/third-parties/google';
 import "./globals.css";
-import { DM_Sans, Sora } from "next/font/google";
+import { DM_Sans, Unbounded } from "next/font/google";
 import { cn } from "@/lib/utils";
 
 const bodyFont = DM_Sans({ subsets: ['latin'], variable: '--font-dm-sans' });
-const headingFont = Sora({ subsets: ['latin'], variable: '--font-sora', weight: ['400', '500', '600', '700', '800'] });
+const headingFont = Unbounded({ subsets: ['latin'], variable: '--font-unbounded', weight: ['400', '500', '600', '700', '800'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://hossam-aec.vercel.app'),
