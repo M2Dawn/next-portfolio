@@ -6,7 +6,7 @@ export default function Experience() {
       
       {/* Background Glows */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-[40%] right-[5%] w-[40%] h-[40%] rounded-full bg-[radial-gradient(circle,rgba(91,141,243,0.05)_0%,transparent_60%)] blur-[100px]"></div>
+        <div className="absolute top-[40%] right-[5%] w-[40%] h-[40%] rounded-full bg-[radial-gradient(circle,rgba(91,141,243,0.06)_0%,transparent_60%)] blur-[100px]"></div>
       </div>
 
       <div className="max-w-[1000px] mx-auto px-6 w-full relative z-10">
@@ -15,7 +15,7 @@ export default function Experience() {
             <span className="w-1.5 h-1.5 rounded-full bg-brand"></span>
             <span className="text-[10px] font-mono uppercase tracking-[0.15em] text-text-2 font-bold">Background</span>
           </div>
-          <h2 className="text-[clamp(2.5rem,5vw,3.5rem)] font-extrabold tracking-tight mb-16 text-white drop-shadow-sm">
+          <h2 className="font-heading text-[clamp(2.5rem,5vw,3.5rem)] font-bold tracking-tight mb-16 text-white">
             Experience
           </h2>
         </Reveal>

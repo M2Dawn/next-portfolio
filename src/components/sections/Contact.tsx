@@ -85,7 +85,7 @@ export default function Contact() {
                 <span className="w-1.5 h-1.5 rounded-full bg-brand"></span>
                 <span className="text-[10px] font-mono uppercase tracking-[0.15em] text-text-2 font-bold">Contact</span>
               </div>
-              <h2 className="text-[clamp(2.5rem,5vw,3.5rem)] font-extrabold tracking-tight mb-6 text-white drop-shadow-sm leading-tight">
+              <h2 className="font-heading text-[clamp(2.5rem,5vw,3.5rem)] font-bold tracking-tight mb-6 text-white leading-tight">
                 Let&apos;s Build<br />Something.
               </h2>
               <p className="text-[1.1rem] text-text-2 mb-10 leading-relaxed font-medium max-w-md">

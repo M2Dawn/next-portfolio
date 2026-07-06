@@ -4,10 +4,10 @@ export default function Expertise() {
   return (
     <section className="relative py-32 bg-[#050507] overflow-hidden border-t border-white/5" id="expertise">
       
-      {/* Deep Background Glows */}
+      {/* Deep Background Glows — blue only */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-[10%] left-[20%] w-[40%] h-[40%] rounded-full bg-[radial-gradient(circle,rgba(91,141,243,0.06)_0%,transparent_60%)] blur-[120px]"></div>
-        <div className="absolute bottom-[20%] right-[10%] w-[30%] h-[50%] rounded-full bg-[radial-gradient(circle,rgba(155,92,246,0.05)_0%,transparent_60%)] blur-[100px]"></div>
+        <div className="absolute top-[10%] left-[20%] w-[40%] h-[40%] rounded-full bg-[radial-gradient(circle,rgba(91,141,243,0.07)_0%,transparent_60%)] blur-[120px]"></div>
+        <div className="absolute bottom-[20%] right-[10%] w-[30%] h-[50%] rounded-full bg-[radial-gradient(circle,rgba(91,141,243,0.05)_0%,transparent_60%)] blur-[100px]"></div>
       </div>
 
       <div className="max-w-[1200px] mx-auto px-6 w-full relative z-10">
@@ -16,7 +16,7 @@ export default function Expertise() {
             <span className="w-1.5 h-1.5 rounded-full bg-brand"></span>
             <span className="text-[10px] font-mono uppercase tracking-[0.15em] text-text-2 font-bold">Capabilities</span>
           </div>
-          <h2 className="text-[clamp(2.5rem,5vw,3.5rem)] font-extrabold tracking-tight mb-6 text-white drop-shadow-sm">
+          <h2 className="font-heading text-[clamp(2.5rem,5vw,3.5rem)] font-bold tracking-tight mb-6 text-white">
             Technical Expertise
           </h2>
           <p className="text-[1.1rem] text-text-2 mb-16 max-w-2xl leading-relaxed font-medium">
@@ -24,8 +24,9 @@ export default function Expertise() {
           </p>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-start">
           
+          {/* Card 1 — default position */}
           <Reveal delay={100} className="h-full">
             <SpotlightCard className="h-full rounded-[1.5rem]" spotlightColor="rgba(91, 141, 243, 0.15)">
               <div className="group bg-[#0A0A0C] border border-white/5 rounded-[1.5rem] p-8 lg:p-10 flex flex-col hover:bg-[#0F0F13] hover:border-brand/30 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(91,141,243,0.12)] transition-all duration-500 h-full relative overflow-hidden">
@@ -41,7 +42,7 @@ export default function Expertise() {
                 </div>
               </div>
               
-              <h3 className="text-xl font-bold text-white mb-4">Revit API Development</h3>
+              <h3 className="font-heading text-xl font-bold text-white mb-4">Revit API Development</h3>
               <p className="text-[15px] text-text-2 leading-relaxed mb-8 flex-1">
                 Custom add-ins and plugins with production-grade error handling, batch processing, and sleek WPF interfaces. From IExternalCommand to full transaction management.
               </p>
@@ -60,7 +61,8 @@ export default function Expertise() {
             </SpotlightCard>
           </Reveal>
 
-          <Reveal delay={200} className="h-full">
+          {/* Card 2 — elevated upward to break the flat grid */}
+          <Reveal delay={200} className="h-full md:-translate-y-6">
             <SpotlightCard className="h-full rounded-[1.5rem]" spotlightColor="rgba(168, 85, 247, 0.15)">
               <div className="group bg-[#0A0A0C] border border-white/5 rounded-[1.5rem] p-8 lg:p-10 flex flex-col hover:bg-[#0F0F13] hover:border-purple-500/30 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(168,85,247,0.12)] transition-all duration-500 h-full relative overflow-hidden">
               <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:via-purple-500/50 transition-colors duration-500"></div>
@@ -73,7 +75,7 @@ export default function Expertise() {
                 <div className="h-full bg-gradient-to-r from-purple-500 to-pink-500 relative" style={{ width: '96%' }}></div>
               </div>
               
-              <h3 className="text-xl font-bold text-white mb-4">Visual Programming</h3>
+              <h3 className="font-heading text-xl font-bold text-white mb-4">Visual Programming</h3>
               <p className="text-[15px] text-text-2 leading-relaxed mb-8 flex-1">
                 Enterprise Dynamo scripts and Python nodes for parametric design automation, parameter validation, and repetitive task elimination &mdash; built for scalability.
               </p>
@@ -100,7 +102,7 @@ export default function Expertise() {
                 <div className="h-full bg-gradient-to-r from-cyan-400 to-blue-500 relative" style={{ width: '85%' }}></div>
               </div>
               
-              <h3 className="text-xl font-bold text-white mb-4">BIM Coordination</h3>
+              <h3 className="font-heading text-xl font-bold text-white mb-4">BIM Coordination</h3>
               <p className="text-[15px] text-text-2 leading-relaxed mb-8 flex-1">
                 Clash detection workflows, 4D simulation setup, and automated data dashboards that transform raw Navisworks exports into actionable project metrics.
               </p>

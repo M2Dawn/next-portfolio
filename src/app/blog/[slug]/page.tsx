@@ -39,7 +39,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
               ))}
             </div>
 
-            <h1 className="text-[clamp(2rem,4vw,3rem)] font-bold tracking-tight text-text-1 mb-6 leading-[1.1]">
+            <h1 className="font-heading text-[clamp(2rem,4vw,3rem)] font-bold tracking-tight text-text-1 mb-6 leading-[1.1]">
               {blog.meta.title}
             </h1>
             

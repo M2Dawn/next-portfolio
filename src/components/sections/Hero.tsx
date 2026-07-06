@@ -8,12 +8,25 @@ export default function Hero() {
   return (
     <section className="relative overflow-hidden pt-20 pb-20 md:pt-20 md:pb-32 min-h-[100svh] flex items-center bg-[#050507]" id="hero">
       
-      {/* Background Deep Glows & Grids */}
+      {/* Background — Blueprint AEC Grid */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-[radial-gradient(circle,rgba(91,141,243,0.18)_0%,transparent_60%)] blur-[100px]"></div>
-        <div className="absolute top-[20%] -right-[10%] w-[60%] h-[60%] rounded-full bg-[radial-gradient(circle,rgba(155,92,246,0.15)_0%,transparent_60%)] blur-[120px]"></div>
+        {/* Primary blue glow — committed brand identity */}
+        <div className="absolute -top-[20%] -left-[10%] w-[55%] h-[55%] rounded-full bg-[radial-gradient(circle,rgba(91,141,243,0.2)_0%,transparent_65%)] blur-[100px]"></div>
+        <div className="absolute top-[30%] -right-[5%] w-[45%] h-[45%] rounded-full bg-[radial-gradient(circle,rgba(91,141,243,0.1)_0%,transparent_65%)] blur-[120px]"></div>
       </div>
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_20%,transparent_100%)] pointer-events-none z-0"></div>
+      {/* Blueprint grid — architectural crosshair pattern */}
+      <div className="absolute inset-0 pointer-events-none z-0"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(91,141,243,0.06) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(91,141,243,0.06) 1px, transparent 1px),
+            linear-gradient(to right, rgba(91,141,243,0.03) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(91,141,243,0.03) 1px, transparent 1px)
+          `,
+          backgroundSize: '96px 96px, 96px 96px, 24px 24px, 24px 24px',
+          maskImage: 'radial-gradient(ellipse 90% 80% at 50% 50%, #000 20%, transparent 100%)'
+        }}
+      ></div>
 
       <div className="max-w-[1200px] mx-auto px-6 w-full relative z-10 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-10 items-center">
         
@@ -32,11 +45,11 @@ export default function Hero() {
           
           <Reveal delay={100}>
             {/* Main Headline */}
-            <h1 className="text-[clamp(2.25rem,4vw,3.75rem)] font-extrabold leading-[1.1] tracking-[-0.02em] mb-6 text-white drop-shadow-sm">
+            <h1 className="font-heading text-[clamp(2.25rem,4vw,3.75rem)] font-bold leading-[1.08] tracking-[-0.03em] mb-6 text-white">
               Building the Tools <br className="hidden lg:block" />
               <span className="relative inline-block mt-1">
                 <span className="absolute -inset-2 bg-brand/20 blur-3xl rounded-full"></span>
-                <span className="relative bg-[linear-gradient(to_right,#60A5FA,#A78BFA,#F472B6,#60A5FA)] bg-[length:200%_auto] bg-clip-text text-transparent animate-gradient-text">
+                <span className="relative bg-[linear-gradient(to_right,#60A5FA,#93C5FD,#3B82F6,#60A5FA)] bg-[length:200%_auto] bg-clip-text text-transparent animate-gradient-text">
                   BIM Teams Rely On.
                 </span>
               </span>

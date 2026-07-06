@@ -12,12 +12,13 @@ interface MarkdownRendererProps {
 
 export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
   return (
-    <div className="prose prose-invert prose-brand max-w-none prose-headings:text-text-1 prose-a:text-brand-light hover:prose-a:text-brand prose-p:text-text-2 prose-li:text-text-2 prose-strong:text-text-1">
-      <ReactMarkdown 
+    <div className="prose prose-invert prose-brand max-w-none prose-headings:font-heading prose-headings:text-text-1 prose-a:text-brand-light hover:prose-a:text-brand prose-p:text-text-2 prose-li:text-text-2 prose-strong:text-text-1">
+      <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={{
+          // Code blocks — high-impact reveal is justified here
           code(props) {
-            const {children, className, node, ...rest} = props;
+            const { children, className, node, ...rest } = props;
             const match = /language-(\w+)/.exec(className || '');
             return match ? (
               <Reveal threshold={0}>
@@ -32,11 +33,16 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
                 </SyntaxHighlighter>
               </Reveal>
             ) : (
-              <code {...rest} className={`${className} bg-white/10 px-1.5 py-0.5 rounded text-brand-light font-mono text-[0.9em]`}>
+              <code
+                {...rest}
+                className={`${className} bg-white/10 px-1.5 py-0.5 rounded text-brand-light font-mono text-[0.9em]`}
+              >
                 {children}
               </code>
             );
           },
+
+          // Blockquotes — premium card treatment, reveal justified
           blockquote(props) {
             return (
               <Reveal threshold={0}>
@@ -49,21 +55,37 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
               </Reveal>
             );
           },
-          p(props) {
-            return <Reveal threshold={0}><p {...props}>{props.children}</p></Reveal>;
-          },
+
+          // Headings — subtle reveal only for h2 section breaks
           h2(props) {
-            return <Reveal threshold={0}><h2 {...props} className="mt-16 mb-6 tracking-tight">{props.children}</h2></Reveal>;
+            return (
+              <Reveal threshold={0}>
+                <h2 {...props} className="font-heading mt-16 mb-6 tracking-tight">{props.children}</h2>
+              </Reveal>
+            );
           },
+
+          // h3 renders instantly — no animation, keeps reading flow smooth
           h3(props) {
-            return <Reveal threshold={0}><h3 {...props} className="mt-10 mb-4">{props.children}</h3></Reveal>;
+            return <h3 {...props} className="font-heading mt-10 mb-4">{props.children}</h3>;
           },
-          ul(props) {
-            return <Reveal threshold={0}><ul {...props} className="my-6 space-y-2">{props.children}</ul></Reveal>;
+
+          // Tables — render plainly inside prose
+          table(props) {
+            return (
+              <div className="overflow-x-auto my-8 rounded-xl border border-white/10">
+                <table {...props} className="w-full text-[14px]">{props.children}</table>
+              </div>
+            );
           },
-          ol(props) {
-            return <Reveal threshold={0}><ol {...props} className="my-6 space-y-2">{props.children}</ol></Reveal>;
-          }
+
+          th(props) {
+            return <th {...props} className="px-4 py-3 text-left text-text-1 bg-white/5 font-semibold border-b border-white/10">{props.children}</th>;
+          },
+
+          td(props) {
+            return <td {...props} className="px-4 py-3 text-text-2 border-b border-white/5">{props.children}</td>;
+          },
         }}
       >
         {content}

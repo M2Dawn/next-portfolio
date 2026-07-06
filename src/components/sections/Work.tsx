@@ -15,8 +15,8 @@ export default function Work() {
               <span className="w-1.5 h-1.5 rounded-full bg-brand"></span>
               Featured Work
             </div>
-            <h2 className="text-[clamp(2.5rem,5vw,3.5rem)] font-extrabold tracking-tight mb-4 text-white drop-shadow-sm">
-              Selected <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand via-purple-400 to-brand bg-[length:200%_auto] animate-gradient-text">Projects</span>
+            <h2 className="font-heading text-[clamp(2.5rem,5vw,3.5rem)] font-bold tracking-tight mb-4 text-white">
+              Selected <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand via-blue-400 to-brand bg-[length:200%_auto] animate-gradient-text">Projects</span>
             </h2>
             <p className="text-[1.1rem] text-text-2 max-w-2xl font-medium leading-relaxed">
               Engineering tools that solve real coordination problems &mdash; measured in hours saved, not features shipped.
@@ -41,7 +41,7 @@ export default function Work() {
                   </div>
                 </div>
                 
-                <h3 className="text-3xl lg:text-4xl font-extrabold text-white mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-brand-light transition-all">BIM Automation Tool</h3>
+                <h3 className="font-heading text-3xl lg:text-4xl font-bold text-white mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-brand-light transition-all">BIM Automation Tool</h3>
                 
                 <p className="text-[1.05rem] text-text-2 leading-relaxed max-w-[90%] mb-8 font-medium">
                   Replaced a 6&ndash;8 hour manual export cycle with a single-click Revit API add-in. Batch-exports 200+ views to DWG with intelligent naming conventions, extracts schedule data to structured CSV, and eliminates rework caused by inconsistent file management.
@@ -116,7 +116,7 @@ export default function Work() {
               <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-green-500/30 bg-green-500/10 text-green-400 text-[10px] font-extrabold uppercase tracking-widest w-max mb-4 shadow-[0_0_15px_rgba(74,222,128,0.1)]">
                 Open Source
               </div>
-              <h3 className="text-2xl font-extrabold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-yellow-200 transition-all">Dynamo Script Library</h3>
+              <h3 className="font-heading text-2xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-yellow-200 transition-all">Dynamo Script Library</h3>
               <p className="text-[0.95rem] text-text-2 leading-relaxed mb-8 font-medium">
                 10+ production-ready Dynamo scripts for Revit automation. Room numbering, batch sheet creation, parameter validation.
               </p>
@@ -149,7 +149,7 @@ export default function Work() {
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
                 </div>
               </div>
-              <h3 className="text-2xl font-extrabold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-cyan-200 transition-all">Model Health Dashboard</h3>
+              <h3 className="font-heading text-2xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-cyan-200 transition-all">Model Health Dashboard</h3>
               <p className="text-[0.95rem] text-text-2 leading-relaxed mb-8 font-medium">
                 Automated tracking dashboard providing real-time insights into BIM model health, warnings, and compliance metrics across multiple active projects.
               </p>
@@ -182,7 +182,7 @@ export default function Work() {
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
                 </div>
               </div>
-              <h3 className="text-2xl font-extrabold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-orange-300 transition-all">Sheet Manager Add-in</h3>
+              <h3 className="font-heading text-2xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-orange-300 transition-all">Sheet Manager Add-in</h3>
               <p className="text-[0.95rem] text-text-2 leading-relaxed mb-8 font-medium">
                 A powerful add-in for bulk sheet creation, revision tracking, and parameter updates. Enables teams to manage hundreds of sheets simultaneously through an intuitive grid interface.
               </p>
