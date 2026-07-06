@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { GoogleAnalytics } from '@next/third-parties/google';
 import "./globals.css";
+import { Syne } from "next/font/google";
 import { Sora } from "next/font/google";
-import { Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
-const sora = Sora({ subsets: ['latin'], variable: '--font-sora', weight: ['400', '500', '600', '700', '800'] });
+const sora = Sora({ subsets: ['latin'], variable: '--font-sora', weight: ['300', '400', '500', '600', '700', '800'] });
+const syne = Syne({ subsets: ['latin'], variable: '--font-syne', weight: ['400', '500', '600', '700', '800'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://hossam-aec.vercel.app'),
@@ -51,7 +51,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("font-sans", inter.variable, sora.variable)}>
+    <html lang="en" className={cn("font-sans", sora.variable, syne.variable)}>
       <body>
         <div className="bg-noise"></div>
         {children}
