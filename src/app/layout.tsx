@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { GoogleAnalytics } from '@next/third-parties/google';
 import "./globals.css";
-import { IBM_Plex_Sans } from "next/font/google";
+import { Figtree, Bricolage_Grotesque } from "next/font/google";
 import { cn } from "@/lib/utils";
 
-const ibmBody = IBM_Plex_Sans({ subsets: ['latin'], variable: '--font-body', weight: ['400', '500', '600', '700'] });
-const ibmHeading = IBM_Plex_Sans({ subsets: ['latin'], variable: '--font-heading-google', weight: ['400', '500', '600', '700'] });
+const figtree = Figtree({ subsets: ['latin'], variable: '--font-body' });
+const bricolage = Bricolage_Grotesque({ subsets: ['latin'], variable: '--font-heading-google', weight: ['400', '500', '600', '700', '800'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://hossam-aec.vercel.app'),
@@ -50,7 +50,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("font-sans", ibmBody.variable, ibmHeading.variable)}>
+    <html lang="en" className={cn("font-sans", figtree.variable, bricolage.variable)}>
       <body>
         <div className="bg-noise"></div>
         {children}
