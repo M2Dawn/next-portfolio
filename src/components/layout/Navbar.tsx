@@ -47,7 +47,7 @@ export default function Navbar() {
         >
           {/* Logo */}
           <Link href="/" className="font-heading text-[0.95rem] font-bold text-white tracking-tight flex items-center gap-2.5 group shrink-0" translate="no">
-            <span className="w-2 h-2 rounded-full bg-brand shadow-[0_0_12px_rgba(74,114,176,0.9)] group-hover:scale-150 transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]"></span>
+            <span className="w-2 h-2 rounded-full bg-brand shadow-[0_0_12px_rgba(58,90,128,0.9)] group-hover:scale-150 transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]"></span>
             Hossam Sabry
           </Link>
 
@@ -69,7 +69,7 @@ export default function Navbar() {
           {/* Desktop CTA */}
           <Link
             href="/#contact"
-            className="hidden md:inline-flex items-center gap-2 text-[13px] font-bold text-white px-4 py-2 rounded-full border border-white/10 bg-white/5 hover:border-brand/50 hover:bg-brand/10 hover:shadow-[0_0_15px_rgba(74,114,176,0.3)] transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] shrink-0"
+            className="hidden md:inline-flex items-center gap-2 text-[13px] font-bold text-white px-4 py-2 rounded-full border border-white/10 bg-white/5 hover:border-brand/50 hover:bg-brand/10 hover:shadow-[0_0_15px_rgba(58,90,128,0.3)] transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] shrink-0"
             onClick={(e) => handleNavClick(e, 'contact')}
           >
             Let&apos;s Talk
@@ -133,7 +133,7 @@ export default function Navbar() {
           >
             <Link
               href="/#contact"
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-white bg-brand/90 border border-brand/50 shadow-[0_0_30px_rgba(74,114,176,0.4)] hover:shadow-[0_0_50px_rgba(74,114,176,0.6)] transition-all duration-500"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-white bg-brand/90 border border-brand/50 shadow-[0_0_30px_rgba(58,90,128,0.4)] hover:shadow-[0_0_50px_rgba(58,90,128,0.6)] transition-all duration-500"
               onClick={(e) => handleNavClick(e, 'contact')}
             >
               Let&apos;s Talk

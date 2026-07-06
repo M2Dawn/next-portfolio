@@ -24,7 +24,7 @@ export default function Work() {
               <span
                 className="animate-gradient-text"
                 style={{
-                  backgroundImage: 'linear-gradient(to right, #7596C6, #4A72B0, #7596C6)',
+                  backgroundImage: 'linear-gradient(to right, #557A9E, #3A5A80, #557A9E)',
                   backgroundSize: '200% auto',
                   WebkitBackgroundClip: 'text',
                   backgroundClip: 'text',
@@ -42,7 +42,7 @@ export default function Work() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[minmax(400px,auto)]">
           <Reveal className="col-span-full h-full">
             {/* Card 1: BIM Automation Tool - FULL WIDTH */}
-            <SpotlightCard className="h-full rounded-[1.5rem]" spotlightColor="rgba(74,114,176,0.15)">
+            <SpotlightCard className="h-full rounded-[1.5rem]" spotlightColor="rgba(58,90,128,0.15)">
               <Link href="/case-studies/bim-automation-tool" className="group h-full bg-[#0A0A0C] border border-white/5 rounded-[1.5rem] p-8 lg:p-12 hover:bg-[#0F0F13] hover:border-white/10 hover:-translate-y-1 transition-all duration-500 flex flex-col md:flex-row gap-10 relative overflow-hidden shadow-2xl">
               
               {/* Card Hover Glow */}
@@ -87,7 +87,7 @@ export default function Work() {
 
           <Reveal className="col-span-1 md:col-span-7 h-full" delay={100}>
             {/* Card 2: Clash Detection Dashboard - LEFT HALF */}
-            <SpotlightCard className="h-full rounded-[1.5rem]" spotlightColor="rgba(74,114,176,0.15)">
+            <SpotlightCard className="h-full rounded-[1.5rem]" spotlightColor="rgba(58,90,128,0.15)">
               <a href="/live-demos/clash-dashboard/index.html?v=2" target="_blank" rel="noopener noreferrer" className="group h-full bg-[#0A0A0C] border border-white/5 rounded-[1.5rem] p-8 lg:p-10 flex flex-col relative overflow-hidden hover:bg-[#0F0F13] hover:border-white/10 hover:-translate-y-1 transition-all duration-500 shadow-2xl">
               <div className="flex items-center justify-between mb-6">
                 <span className="text-[10px] font-mono uppercase tracking-[0.15em] text-brand-light font-bold">JavaScript &middot; Chart.js</span>
@@ -227,7 +227,7 @@ export default function Work() {
             <p className="text-text-3 text-sm font-medium">Interested in working together?</p>
               <Link
               href="/#contact"
-              className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full font-bold text-white border border-white/10 bg-white/5 hover:border-brand/50 hover:bg-brand/10 hover:shadow-[0_0_30px_rgba(74,114,176,0.3)] transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]"
+              className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full font-bold text-white border border-white/10 bg-white/5 hover:border-brand/50 hover:bg-brand/10 hover:shadow-[0_0_30px_rgba(58,90,128,0.3)] transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]"
             >
               Let&apos;s Work Together
               <span className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center group-hover:translate-x-0.5 transition-transform duration-300">
