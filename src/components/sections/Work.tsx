@@ -1,4 +1,4 @@
-﻿import Link from 'next/link';
+import Link from 'next/link';
 import Image from 'next/image';
 import Reveal from '@/components/ui/Reveal';
 import SpotlightCard from '@/components/ui/SpotlightCard';
@@ -16,7 +16,7 @@ export default function Work() {
               Featured Work
             </div>
             <h2 className="font-heading text-[clamp(2.5rem,5vw,3.5rem)] font-bold tracking-tight mb-4 text-white">
-              Selected <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand via-blue-400 to-brand bg-[length:200%_auto] animate-gradient-text">Projects</span>
+              Selected <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand via-purple-400 to-brand bg-[length:200%_auto] animate-gradient-text">Projects</span>
             </h2>
             <p className="text-[1.1rem] text-text-2 max-w-2xl font-medium leading-relaxed">
               Engineering tools that solve real coordination problems &mdash; measured in hours saved, not features shipped.
