@@ -4,14 +4,7 @@ export default function Experience() {
   return (
     <section className="relative py-32 bg-[#050507] overflow-hidden" id="experience">
       
-      {/* Isometric Dot Matrix Background */}
-      <div 
-        className="absolute inset-0 z-0 pointer-events-none opacity-[0.03]"
-        style={{
-          backgroundImage: 'radial-gradient(circle at center, #ffffff 1px, transparent 1px)',
-          backgroundSize: '24px 24px'
-        }}
-      ></div>
+      {/* Background removed for cleaner obsidian look */}
 
       {/* Subtle Glow */}
       <div className="absolute inset-0 z-0 pointer-events-none">
