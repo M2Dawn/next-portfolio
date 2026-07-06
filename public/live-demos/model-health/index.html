@@ -189,6 +189,15 @@ tr:hover td{background:rgba(91,141,243,.03);}
       pointer-events: none; z-index: 9999; opacity: 0.04;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
     }
+    .header-btn-custom {
+      color: var(--accent) !important;
+      border-color: var(--accent-border) !important;
+      background: transparent !important;
+    }
+    .header-btn-custom:hover {
+      background: var(--accent-dim) !important;
+      border-color: var(--accent) !important;
+    }
 </style>
 
 </head>
@@ -205,7 +214,7 @@ tr:hover td{background:rgba(91,141,243,.03);}
     </div>
   </div>
   <div class="header-actions">
-      <a href="/case-studies/model-health.html" class="header-btn" style="color: var(--accent); border-color: var(--accent-border); text-decoration: none;">Read Case Study</a>
+      <a href="/case-studies/model-health.html" class="btn secondary header-btn-custom">Read Case Study</a>
     <a href="/" onclick="event.preventDefault(); const url = window.location.href; window.location.href = url.split('/live-demos/')[0] + '/';" class="header-btn" style="text-decoration:none;">
       <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
       Portfolio
