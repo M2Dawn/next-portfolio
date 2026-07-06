@@ -4,8 +4,8 @@ import "./globals.css";
 import { Figtree, Bricolage_Grotesque } from "next/font/google";
 import { cn } from "@/lib/utils";
 
-const figtree = Figtree({ subsets: ['latin'], variable: '--font-body' });
-const bricolage = Bricolage_Grotesque({ subsets: ['latin'], variable: '--font-heading-google', weight: ['400', '500', '600', '700', '800'] });
+const bodyFont = Figtree({ subsets: ['latin'], variable: '--font-figtree' });
+const headingFont = Bricolage_Grotesque({ subsets: ['latin'], variable: '--font-bricolage', weight: ['400', '500', '600', '700', '800'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://hossam-aec.vercel.app'),
@@ -50,8 +50,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("font-sans", figtree.variable, bricolage.variable)}>
-      <body>
+    <html lang="en" className={cn(bodyFont.variable, headingFont.variable)}>
+      <body className={bodyFont.className}>
         <div className="bg-noise"></div>
         {children}
         
