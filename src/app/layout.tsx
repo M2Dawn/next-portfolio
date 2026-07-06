@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { GoogleAnalytics } from '@next/third-parties/google';
 import "./globals.css";
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { DM_Sans, Outfit } from "next/font/google";
 import { cn } from "@/lib/utils";
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
-const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-jakarta', weight: ['400', '500', '600', '700', '800'] });
+const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-body' });
+const outfit = Outfit({ subsets: ['latin'], variable: '--font-heading-google', weight: ['400', '500', '600', '700', '800'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://hossam-aec.vercel.app'),
@@ -50,7 +50,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("font-sans", inter.variable, jakarta.variable)}>
+    <html lang="en" className={cn("font-sans", dmSans.variable, outfit.variable)}>
       <body>
         <div className="bg-noise"></div>
         {children}
