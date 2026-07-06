@@ -53,10 +53,14 @@ export default function SpotlightCard({ children, className = "", spotlightColor
       className={`relative overflow-hidden ${className}`}
     >
       <div
-        className="pointer-events-none absolute -inset-px transition duration-300 z-0"
+        className="pointer-events-none absolute left-0 top-0 z-0 transition-opacity duration-300"
         style={{
           opacity,
-          background: `radial-gradient(600px circle at var(--mouse-x, 0px) var(--mouse-y, 0px), ${spotlightColor}, transparent 40%)`,
+          width: '1200px',
+          height: '1200px',
+          transform: 'translate3d(calc(var(--mouse-x, 0px) - 600px), calc(var(--mouse-y, 0px) - 600px), 0)',
+          background: `radial-gradient(circle, ${spotlightColor}, transparent 40%)`,
+          willChange: 'transform',
         }}
       />
       <div className="relative z-10 h-full">{children}</div>
