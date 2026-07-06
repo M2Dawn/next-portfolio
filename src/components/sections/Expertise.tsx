@@ -2,11 +2,11 @@ import Reveal from '@/components/ui/Reveal';
 import SpotlightCard from '@/components/ui/SpotlightCard';
 export default function Expertise() {
   return (
-    <section className="relative py-32 bg-[#000000] overflow-hidden border-t border-white/5" id="expertise">
+    <section className="relative py-32 bg-[#050507] overflow-hidden border-t border-white/5" id="expertise">
       
       {/* Background Glows */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-[10%] left-[20%] w-[40%] h-[40%] rounded-full bg-[radial-gradient(circle,rgba(124,110,249,0.03)_0%,transparent_60%)] blur-[120px]"></div>
+        <div className="absolute top-[10%] left-[20%] w-[40%] h-[40%] rounded-full bg-[radial-gradient(circle,var(--color-glow-subtle)_0%,transparent_60%)] blur-[120px]"></div>
         <div className="absolute bottom-[20%] right-[10%] w-[30%] h-[50%] rounded-full bg-[radial-gradient(circle,rgba(124,110,249,0.02)_0%,transparent_60%)] blur-[100px]"></div>
       </div>
 
