@@ -1,7 +1,7 @@
 ---
 title: "BIM Automation: From Concept to Production"
 description: "The practical 9-phase framework for taking BIM automation tools from a working prototype to a reliable, organization-wide solution — based on real projects and hard-won lessons."
-date: "2025-12-07"
+date: "2026-06-10"
 tags: ["Best Practices", "BIM", "Automation"]
 ---
 
