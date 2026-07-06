@@ -886,15 +886,38 @@
     .empty-state-drop:hover{border-color:var(--accent);color:var(--accent);background:rgba(91,141,243,.05);}
     .dashboard-content{display:none;}
     .dashboard-content.loaded{display:block;}
-  </style>
+  
+    /* Animated Gradient Keyframes */
+    @keyframes gradient-x {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    .animate-gradient-text {
+      background: linear-gradient(to right, #60A5FA, #A78BFA, #F472B6, #60A5FA);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradient-x 4s linear infinite;
+    }
+
+    /* Film Grain Overlay */
+    .bg-noise {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      pointer-events: none; z-index: 9999; opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+</style>
+
 </head>
 
 <body>
+<div class="bg-noise"></div>
   <div class="bg-gradient"></div>
 
   <header>
     <div class="header-left">
-      <div class="header-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div>
+      <div class="header-icon"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div>
       <div>
         <h1>Clash Detection Dashboard</h1>
         <div class="header-subtitle">Advanced BIM Coordination Platform</div>
@@ -902,23 +925,23 @@
     </div>
     <div class="header-actions">
       <a href="/" onclick="event.preventDefault(); const url = window.location.href; window.location.href = url.split('/live-demos/')[0] + '/';" class="btn secondary" style="text-decoration:none;">
-        <span class="btn-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></span>
+        <span class="btn-icon"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></span>
         <span>Portfolio</span>
       </a>
       <button id="loadSampleBtn" class="btn secondary">
-        <span class="btn-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg></span>
+        <span class="btn-icon"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg></span>
         <span>Load Sample</span>
       </button>
       <button id="downloadJson" class="btn secondary">
-        <span class="btn-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+        <span class="btn-icon"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
         <span>Export JSON</span>
       </button>
       <button id="downloadCsv" class="btn secondary">
-        <span class="btn-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+        <span class="btn-icon"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
         <span>Export CSV</span>
       </button>
       <button id="printReport" class="btn secondary">
-        <span class="btn-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></span>
+        <span class="btn-icon"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></span>
         <span>Print Report</span>
       </button>
     </div>
@@ -929,17 +952,17 @@
     <!-- Empty State -->
     <div class="empty-state" id="emptyState">
       <div class="empty-state-ring">
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
       </div>
       <h2>No Clash Data Loaded</h2>
       <p>Load sample data to explore the dashboard, or drop your own Navisworks clash export file to get started.</p>
       <button class="empty-state-cta" id="emptyLoadSample">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
         Load Sample Data
       </button>
       <div class="empty-state-or">or</div>
       <label class="empty-state-drop" for="fileInput">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
         Drop a CSV or JSON file
       </label>
       <input id="fileInput" type="file" accept=".csv,.json" style="display:none" />
@@ -959,22 +982,22 @@
     <div class="stats-grid" id="summary">
       <div class="stat-card">
         <div class="stat-label">Total Clashes</div>
-        <div class="stat-value" id="totalClashes">0</div>
+        <div class="stat-value animate-gradient-text" id="totalClashes">0</div>
         <div class="stat-change positive" id="totalChange">+0 from last week</div>
       </div>
       <div class="stat-card">
         <div class="stat-label">Open</div>
-        <div class="stat-value" id="openClashes">0</div>
+        <div class="stat-value animate-gradient-text" id="openClashes">0</div>
         <div class="stat-change negative" id="openChange">Needs attention</div>
       </div>
       <div class="stat-card">
         <div class="stat-label">Assigned</div>
-        <div class="stat-value" id="assignedClashes">0</div>
+        <div class="stat-value animate-gradient-text" id="assignedClashes">0</div>
         <div class="stat-change" id="assignedChange">In progress</div>
       </div>
       <div class="stat-card">
         <div class="stat-label">Resolved</div>
-        <div class="stat-value" id="resolvedClashes">0</div>
+        <div class="stat-value animate-gradient-text" id="resolvedClashes">0</div>
         <div class="stat-change positive" id="resolvedChange">Completed</div>
       </div>
     </div>
@@ -983,22 +1006,22 @@
     <div class="stats-grid" id="kpiMetrics">
       <div class="stat-card">
         <div class="stat-label">Resolution Rate</div>
-        <div class="stat-value" id="kpiResolution">0%</div>
+        <div class="stat-value animate-gradient-text" id="kpiResolution">0%</div>
         <div class="stat-change positive">Target: 100%</div>
       </div>
       <div class="stat-card">
         <div class="stat-label">High Priority</div>
-        <div class="stat-value" id="kpiHighPriority">0</div>
+        <div class="stat-value animate-gradient-text" id="kpiHighPriority">0</div>
         <div class="stat-change negative">Urgent</div>
       </div>
       <div class="stat-card">
         <div class="stat-label">Avg Resolution Time</div>
-        <div class="stat-value" id="kpiAvgTime">N/A</div>
+        <div class="stat-value animate-gradient-text" id="kpiAvgTime">N/A</div>
         <div class="stat-change">Days to resolve</div>
       </div>
       <div class="stat-card">
         <div class="stat-label">Unassigned</div>
-        <div class="stat-value" id="kpiUnassigned">0</div>
+        <div class="stat-value animate-gradient-text" id="kpiUnassigned">0</div>
         <div class="stat-change negative">Pending assignment</div>
       </div>
     </div>
@@ -1008,7 +1031,7 @@
       <button class="tab active" data-tab="overview">Overview</button>
       <button class="tab" data-tab="table">Clash Table</button>
       <button class="tab" data-tab="analytics">Analytics</button>
-      <button class="tab" data-tab="timeline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Timeline</button>
+      <button class="tab" data-tab="timeline"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Timeline</button>
     </div>
 
     <!-- Tab: Overview -->
@@ -1067,16 +1090,16 @@
 
         <div class="table-container">
           <table id="clashTable">
-            <thead>
+            <th scope="col"ead>
               <tr>
-                <th>ClashID</th>
-                <th>Model A</th>
-                <th>Model B</th>
-                <th>Category</th>
-                <th>Priority</th>
-                <th>Location</th>
-                <th>Status</th>
-                <th>Assigned To</th>
+                <th scope="col">ClashID</th>
+                <th scope="col">Model A</th>
+                <th scope="col">Model B</th>
+                <th scope="col">Category</th>
+                <th scope="col">Priority</th>
+                <th scope="col">Location</th>
+                <th scope="col">Status</th>
+                <th scope="col">Assigned To</th>
               </tr>
             </thead>
             <tbody></tbody>

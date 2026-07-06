@@ -207,14 +207,37 @@ header{flex-direction:column;align-items:flex-start;}
 .empty-state-drop:hover{border-color:var(--accent);color:var(--accent);background:rgba(91,141,243,.05);}
 .dashboard-content{display:none;}
 .dashboard-content.loaded{display:block;}
+
+    /* Animated Gradient Keyframes */
+    @keyframes gradient-x {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    .animate-gradient-text {
+      background: linear-gradient(to right, #60A5FA, #A78BFA, #F472B6, #60A5FA);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradient-x 4s linear infinite;
+    }
+
+    /* Film Grain Overlay */
+    .bg-noise {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      pointer-events: none; z-index: 9999; opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
 </style>
+
 </head>
 <body>
+<div class="bg-noise"></div>
 <div class="bg-gradient"></div>
 
 <header>
   <div class="header-left">
-    <div class="header-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+    <div class="header-icon"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
     <div>
       <h1>Sheet Set Manager</h1>
       <div class="header-subtitle">BIM Document Control Platform</div>
@@ -222,23 +245,23 @@ header{flex-direction:column;align-items:flex-start;}
   </div>
   <div class="header-actions">
     <a href="/" onclick="event.preventDefault(); const url = window.location.href; window.location.href = url.split('/live-demos/')[0] + '/';" class="btn secondary" style="text-decoration:none;">
-      <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></span>
+      <span><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></span>
       <span>Portfolio</span>
     </a>
     <button id="loadSampleBtn" class="btn secondary">
-      <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg></span>
+      <span><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg></span>
       <span>Load Sample</span>
     </button>
     <button id="downloadCsv" class="btn secondary">
-      <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+      <span><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
       <span>Export CSV</span>
     </button>
     <button id="downloadExcel" class="btn secondary">
-      <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></span>
+      <span><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></span>
       <span>Export Excel</span>
     </button>
     <button id="printSet" class="btn secondary">
-      <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></span>
+      <span><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></span>
       <span>Print Set</span>
     </button>
   </div>
@@ -249,17 +272,17 @@ header{flex-direction:column;align-items:flex-start;}
   <!-- Empty State -->
   <div class="empty-state" id="emptyState">
     <div class="empty-state-ring">
-      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
     </div>
     <h2>No Sheets Loaded</h2>
     <p>Load sample data to explore the sheet manager, or import your own Revit sheet schedule export.</p>
     <button class="empty-state-cta" id="emptyLoadSample">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+      <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
       Load Sample Data
     </button>
     <div class="empty-state-or">or</div>
     <label class="empty-state-drop" for="fileInput">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+      <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
       Drop a CSV or JSON file
     </label>
     <input id="fileInput" type="file" accept=".csv,.json" style="display:none" />
@@ -279,27 +302,27 @@ header{flex-direction:column;align-items:flex-start;}
   <div class="stats-grid" id="summary">
     <div class="stat-card">
       <div class="stat-label">Total Sheets</div>
-      <div class="stat-value" id="totalSheets">0</div>
+      <div class="stat-value animate-gradient-text" id="totalSheets">0</div>
       <div class="stat-change">All disciplines</div>
     </div>
     <div class="stat-card">
       <div class="stat-label">Approved</div>
-      <div class="stat-value" id="approvedSheets">0</div>
+      <div class="stat-value animate-gradient-text" id="approvedSheets">0</div>
       <div class="stat-change" style="color:var(--success)">Ready to print</div>
     </div>
     <div class="stat-card">
       <div class="stat-label">In Review</div>
-      <div class="stat-value" id="reviewSheets">0</div>
+      <div class="stat-value animate-gradient-text" id="reviewSheets">0</div>
       <div class="stat-change" style="color:var(--warning)">Pending approval</div>
     </div>
     <div class="stat-card">
       <div class="stat-label">Latest Revision</div>
-      <div class="stat-value" id="latestRev">—</div>
+      <div class="stat-value animate-gradient-text" id="latestRev">—</div>
       <div class="stat-change">Current issue</div>
     </div>
     <div class="stat-card">
       <div class="stat-label">Disciplines</div>
-      <div class="stat-value" id="discCount">0</div>
+      <div class="stat-value animate-gradient-text" id="discCount">0</div>
       <div class="stat-change">Active trades</div>
     </div>
   </div>
@@ -307,8 +330,8 @@ header{flex-direction:column;align-items:flex-start;}
   <!-- Tabs -->
   <div class="tabs">
     <button class="tab active" data-tab="sheets">Sheet Index</button>
-    <button class="tab" data-tab="printset"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg> Print Sets</button>
-    <button class="tab" data-tab="revisions"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg> Revisions</button>
+    <button class="tab" data-tab="printset"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg> Print Sets</button>
+    <button class="tab" data-tab="revisions"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg> Revisions</button>
   </div>
 
   <!-- Tab: Sheet Index -->
@@ -330,16 +353,16 @@ header{flex-direction:column;align-items:flex-start;}
       </div>
       <div class="table-container">
         <table id="sheetTable">
-          <thead>
+          <th scope="col"ead>
             <tr>
-              <th>Sheet Number</th>
-              <th>Sheet Name</th>
-              <th>Discipline</th>
-              <th>Revision</th>
-              <th>Status</th>
-              <th>Scale</th>
-              <th>Drawn By</th>
-              <th>Date</th>
+              <th scope="col">Sheet Number</th>
+              <th scope="col">Sheet Name</th>
+              <th scope="col">Discipline</th>
+              <th scope="col">Revision</th>
+              <th scope="col">Status</th>
+              <th scope="col">Scale</th>
+              <th scope="col">Drawn By</th>
+              <th scope="col">Date</th>
             </tr>
           </thead>
           <tbody></tbody>

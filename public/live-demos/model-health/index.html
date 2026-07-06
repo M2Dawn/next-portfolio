@@ -168,14 +168,37 @@ tr:hover td{background:rgba(91,141,243,.03);}
 /* ===== RESPONSIVE ===== */
 @media(max-width:1024px){.health-hero{grid-template-columns:1fr;}.charts-grid{grid-template-columns:1fr;}.cat-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:768px){.container{padding:16px;}.header{padding:12px 16px;flex-wrap:wrap;gap:12px;}.header-actions{width:100%;overflow-x:auto;}.kpi-grid{grid-template-columns:1fr;}.cat-grid{grid-template-columns:1fr;}}
+
+    /* Animated Gradient Keyframes */
+    @keyframes gradient-x {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    .animate-gradient-text {
+      background: linear-gradient(to right, #60A5FA, #A78BFA, #F472B6, #60A5FA);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradient-x 4s linear infinite;
+    }
+
+    /* Film Grain Overlay */
+    .bg-noise {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      pointer-events: none; z-index: 9999; opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
 </style>
+
 </head>
 <body>
+<div class="bg-noise"></div>
 
 <!-- HEADER -->
 <header class="header">
   <div class="header-left">
-    <div class="header-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+    <div class="header-icon"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
     <div>
       <h1>Model Health Dashboard</h1>
       <div class="subtitle">BIM QA/QC Analytics Platform</div>
@@ -183,15 +206,15 @@ tr:hover td{background:rgba(91,141,243,.03);}
   </div>
   <div class="header-actions">
     <a href="/" onclick="event.preventDefault(); const url = window.location.href; window.location.href = url.split('/live-demos/')[0] + '/';" class="header-btn" style="text-decoration:none;">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
       Portfolio
     </a>
     <button class="header-btn" id="loadSampleBtn">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+      <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
       Load Sample
     </button>
     <button class="header-btn" id="exportReport">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
       Export Report
     </button>
   </div>
@@ -201,17 +224,17 @@ tr:hover td{background:rgba(91,141,243,.03);}
   <!-- Empty State -->
   <div class="empty-state" id="emptyState">
     <div class="empty-state-ring">
-      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
     </div>
     <h2>No Model Data Loaded</h2>
     <p>Load sample data to explore the health dashboard, or upload your own Revit model audit export.</p>
     <button class="empty-state-cta" id="emptyLoadSample">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+      <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
       Load Sample Data
     </button>
     <div class="empty-state-or">or</div>
     <label class="empty-state-drop" for="fileInput">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+      <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
       Drop a JSON file
     </label>
     <input type="file" id="fileInput" accept=".json,.csv" style="display:none">
@@ -243,14 +266,14 @@ tr:hover td{background:rgba(91,141,243,.03);}
     <div class="kpi-grid">
       <div class="kpi-card">
         <div>
-          <div class="kpi-header"><span class="kpi-label">Total Elements</span><span class="kpi-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="12" y1="3" x2="12" y2="21"/></svg></span></div>
+          <div class="kpi-header"><span class="kpi-label">Total Elements</span><span class="kpi-icon"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="12" y1="3" x2="12" y2="21"/></svg></span></div>
           <div class="kpi-value accent" id="totalElements">—</div>
           <div class="kpi-sub">Audited components</div>
         </div>
       </div>
       <div class="kpi-card">
         <div>
-          <div class="kpi-header"><span class="kpi-label">Issues Found</span><span class="kpi-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span></div>
+          <div class="kpi-header"><span class="kpi-label">Issues Found</span><span class="kpi-icon"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span></div>
           <div class="kpi-value red" id="totalIssues">—</div>
           <div class="kpi-sub" id="criticalCount">0 critical</div>
         </div>
@@ -258,7 +281,7 @@ tr:hover td{background:rgba(91,141,243,.03);}
       </div>
       <div class="kpi-card">
         <div>
-          <div class="kpi-header"><span class="kpi-label">Compliance</span><span class="kpi-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span></div>
+          <div class="kpi-header"><span class="kpi-label">Compliance</span><span class="kpi-icon"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span></div>
           <div class="kpi-value green" id="complianceRate">—</div>
           <div class="kpi-sub">Standards adherence</div>
         </div>
@@ -266,7 +289,7 @@ tr:hover td{background:rgba(91,141,243,.03);}
       </div>
       <div class="kpi-card">
         <div>
-          <div class="kpi-header"><span class="kpi-label">Warnings</span><span class="kpi-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></span></div>
+          <div class="kpi-header"><span class="kpi-label">Warnings</span><span class="kpi-icon"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></span></div>
           <div class="kpi-value amber" id="warningCount">—</div>
           <div class="kpi-sub" id="infoCount">0 informational</div>
         </div>
@@ -277,30 +300,30 @@ tr:hover td{background:rgba(91,141,243,.03);}
 
   <!-- TABS -->
   <div class="tabs-bar">
-    <button class="tab active" data-tab="overview"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:5px;vertical-align:-1px"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Overview</button>
-    <button class="tab" data-tab="categories"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:5px;vertical-align:-1px"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>Categories</button>
-    <button class="tab" data-tab="issues"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:5px;vertical-align:-1px"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Issues</button>
+    <button class="tab active" data-tab="overview"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:5px;vertical-align:-1px"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Overview</button>
+    <button class="tab" data-tab="categories"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:5px;vertical-align:-1px"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>Categories</button>
+    <button class="tab" data-tab="issues"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:5px;vertical-align:-1px"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Issues</button>
   </div>
 
   <!-- TAB: OVERVIEW -->
   <div class="tab-content active" id="overview">
     <div class="charts-grid">
       <div class="chart-card">
-        <h3><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></span> Health by Category</h3>
+        <h3><span><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></span> Health by Category</h3>
         <div class="chart-wrap"><canvas id="radarChart"></canvas></div>
       </div>
       <div class="chart-card">
-        <h3><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span> Issue Severity Distribution</h3>
+        <h3><span><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span> Issue Severity Distribution</h3>
         <div class="chart-wrap"><canvas id="severityChart"></canvas></div>
       </div>
     </div>
     <div class="charts-grid">
       <div class="chart-card">
-        <h3><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 6V2"/><path d="M6 6V4"/><path d="M18 6V4"/></svg></span> Issues by Discipline</h3>
+        <h3><span><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 6V2"/><path d="M6 6V4"/><path d="M18 6V4"/></svg></span> Issues by Discipline</h3>
         <div class="chart-wrap"><canvas id="disciplineChart"></canvas></div>
       </div>
       <div class="chart-card">
-        <h3><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span> Category Scores</h3>
+        <h3><span><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span> Category Scores</h3>
         <div class="chart-wrap"><canvas id="categoryBar"></canvas></div>
       </div>
     </div>
@@ -315,7 +338,7 @@ tr:hover td{background:rgba(91,141,243,.03);}
   <div class="tab-content" id="issues">
     <div class="issues-card">
       <div class="issues-header">
-        <h3><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:5px;vertical-align:-2px"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>All Issues <span class="issues-count" id="issuesCountBadge">0</span></h3>
+        <h3><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:5px;vertical-align:-2px"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>All Issues <span class="issues-count" id="issuesCountBadge">0</span></h3>
         <div class="issues-filters">
           <button class="issue-filter active" data-severity="all">All</button>
           <button class="issue-filter" data-severity="Critical">Critical</button>
@@ -324,7 +347,7 @@ tr:hover td{background:rgba(91,141,243,.03);}
         </div>
       </div>
       <table>
-        <thead><tr><th>Severity</th><th>Category</th><th>Element</th><th>Description</th><th>Discipline</th></tr></thead>
+        <th scope="col"ead><tr><th scope="col">Severity</th><th scope="col">Category</th><th scope="col">Element</th><th scope="col">Description</th><th scope="col">Discipline</th></tr></thead>
         <tbody id="issuesTableBody"></tbody>
       </table>
     </div>
