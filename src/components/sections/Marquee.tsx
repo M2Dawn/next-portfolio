@@ -1,4 +1,4 @@
-const items = [
+﻿const items = [
   "REVIT API",
   "DYNAMO",
   "C#",
@@ -36,3 +36,4 @@ export default function Marquee() {
     </div>
   );
 }
+

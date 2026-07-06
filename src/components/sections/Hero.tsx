@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import Link from 'next/link';
 import WpfSimulation from '@/components/ui/WpfSimulation';
@@ -11,17 +11,17 @@ export default function Hero() {
       {/* Background ΓÇö Blueprint AEC Grid */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Primary blue glow ΓÇö committed brand identity */}
-        <div className="absolute -top-[20%] -left-[10%] w-[55%] h-[55%] rounded-full bg-[radial-gradient(circle,rgba(91,141,243,0.2)_0%,transparent_65%)] blur-[100px]"></div>
-        <div className="absolute top-[30%] -right-[5%] w-[45%] h-[45%] rounded-full bg-[radial-gradient(circle,rgba(91,141,243,0.1)_0%,transparent_65%)] blur-[120px]"></div>
+        <div className="absolute -top-[20%] -left-[10%] w-[55%] h-[55%] rounded-full bg-[radial-gradient(circle,rgba(124,110,249,0.2)_0%,transparent_65%)] blur-[100px]"></div>
+        <div className="absolute top-[30%] -right-[5%] w-[45%] h-[45%] rounded-full bg-[radial-gradient(circle,rgba(124,110,249,0.1)_0%,transparent_65%)] blur-[120px]"></div>
       </div>
       {/* Blueprint grid ΓÇö architectural crosshair pattern */}
       <div className="absolute inset-0 pointer-events-none z-0"
         style={{
           backgroundImage: `
-            linear-gradient(to right, rgba(91,141,243,0.06) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(91,141,243,0.06) 1px, transparent 1px),
-            linear-gradient(to right, rgba(91,141,243,0.03) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(91,141,243,0.03) 1px, transparent 1px)
+            linear-gradient(to right, rgba(124,110,249,0.06) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(124,110,249,0.06) 1px, transparent 1px),
+            linear-gradient(to right, rgba(124,110,249,0.03) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(124,110,249,0.03) 1px, transparent 1px)
           `,
           backgroundSize: '96px 96px, 96px 96px, 24px 24px, 24px 24px',
           maskImage: 'radial-gradient(ellipse 90% 80% at 50% 50%, #000 20%, transparent 100%)'
@@ -34,7 +34,7 @@ export default function Hero() {
         <div className="w-full max-w-[650px] lg:max-w-full relative">
           <Reveal>
             {/* Status Pill */}
-            <div className="inline-flex items-center gap-2.5 text-[11px] md:text-[13px] font-semibold tracking-wide text-text-1 mb-6 md:mb-8 px-4 py-2 rounded-full bg-white/[0.03] border border-white/10 backdrop-blur-xl shadow-[0_0_20px_rgba(91,141,243,0.1)] hover:bg-white/10 transition-colors cursor-default">
+            <div className="inline-flex items-center gap-2.5 text-[11px] md:text-[13px] font-semibold tracking-wide text-text-1 mb-6 md:mb-8 px-4 py-2 rounded-full bg-white/[0.03] border border-white/10 backdrop-blur-xl shadow-[0_0_20px_rgba(124,110,249,0.1)] hover:bg-white/10 transition-colors cursor-default">
               <span className="relative flex h-2.5 w-2.5 mr-1">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500 shadow-[0_0_8px_#4ade80]"></span>
@@ -49,7 +49,7 @@ export default function Hero() {
               Building the Tools <br className="hidden lg:block" />
               <span className="relative inline-block mt-1">
                 <span className="absolute -inset-2 bg-brand/20 blur-3xl rounded-full"></span>
-                <span className="relative bg-[linear-gradient(to_right,#60A5FA,#93C5FD,#3B82F6,#60A5FA)] bg-[length:200%_auto] bg-clip-text text-transparent animate-gradient-text">
+                <span className="relative bg-[linear-gradient(to_right,#A78BFA,#C4B5FD,#818CF8,#A78BFA)] bg-[length:200%_auto] bg-clip-text text-transparent animate-gradient-text">
                   BIM Teams Rely On.
                 </span>
               </span>
@@ -65,8 +65,8 @@ export default function Hero() {
           <Reveal delay={300}>
             {/* Call to Actions */}
             <div className="flex flex-wrap items-center gap-4 mb-10 md:mb-12">
-              <Link href="#work" className="group relative inline-flex items-center justify-center gap-3 px-6 py-3.5 md:px-8 md:py-4 rounded-xl font-bold text-white bg-white/5 border border-white/10 transition-all duration-300 overflow-hidden shadow-[0_0_40px_rgba(91,141,243,0.15)] hover:shadow-[0_0_60px_rgba(91,141,243,0.35)] hover:-translate-y-1">
-                <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-brand via-[#8b5cf6] to-brand opacity-90 group-hover:opacity-100 transition-opacity"></div>
+              <Link href="#work" className="group relative inline-flex items-center justify-center gap-3 px-6 py-3.5 md:px-8 md:py-4 rounded-xl font-bold text-white bg-white/5 border border-white/10 transition-all duration-300 overflow-hidden shadow-[0_0_40px_rgba(124,110,249,0.15)] hover:shadow-[0_0_60px_rgba(124,110,249,0.35)] hover:-translate-y-1">
+                <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-brand via-violet-400 to-brand opacity-90 group-hover:opacity-100 transition-opacity"></div>
                 <span className="relative z-10 flex items-center gap-2">
                   Explore My Work
                   <svg className="transform group-hover:translate-x-1 transition-transform" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -112,8 +112,8 @@ export default function Hero() {
         {/* Right Content - Visual Panel */}
         <div className="w-full relative mt-16 lg:mt-0 flex flex-col gap-6">
           <Reveal delay={300} className="relative z-10">
-            {/* Massive glow behind the mockup */}
-            <div className="absolute -inset-4 bg-gradient-to-b from-brand/20 via-purple-500/10 to-transparent rounded-[2rem] blur-2xl opacity-60 pointer-events-none"></div>
+            {/* Glow behind mockup */}
+            <div className="absolute -inset-4 bg-gradient-to-b from-brand/20 via-violet-500/10 to-transparent rounded-[2rem] blur-2xl opacity-60 pointer-events-none"></div>
             
             <WpfSimulation />
           </Reveal>
@@ -137,3 +137,4 @@ export default function Hero() {
     </section>
   );
 }
+

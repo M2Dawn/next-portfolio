@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
@@ -73,7 +73,7 @@ export default function Contact() {
     <section className="relative py-32 bg-[#050507] overflow-hidden border-t border-white/5" id="contact">
       {/* Background Glows */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-[20%] left-[10%] w-[50%] h-[50%] rounded-full bg-[radial-gradient(circle,rgba(91,141,243,0.08)_0%,transparent_60%)] blur-[120px]"></div>
+        <div className="absolute top-[20%] left-[10%] w-[50%] h-[50%] rounded-full bg-[radial-gradient(circle,rgba(124,110,249,0.08)_0%,transparent_60%)] blur-[120px]"></div>
       </div>
 
       <div className="max-w-[1200px] mx-auto px-6 w-full relative z-10">
@@ -146,7 +146,7 @@ export default function Contact() {
                 <button 
                   type="submit" 
                   disabled={isSubmitting || success}
-                  className={`relative overflow-hidden w-full py-4 rounded-xl font-bold text-white transition-all duration-300 mt-2 ${success ? 'bg-green-500 shadow-[0_0_20px_rgba(74,222,128,0.3)]' : errorStatus ? 'bg-red-500' : 'bg-brand hover:bg-brand-light shadow-[0_0_30px_rgba(91,141,243,0.3)] hover:shadow-[0_0_40px_rgba(91,141,243,0.5)] hover:-translate-y-1'}`}
+                  className={`relative overflow-hidden w-full py-4 rounded-xl font-bold text-white transition-all duration-300 mt-2 ${success ? 'bg-green-500 shadow-[0_0_20px_rgba(74,222,128,0.3)]' : errorStatus ? 'bg-red-500' : 'bg-brand hover:bg-brand-light shadow-[0_0_30px_rgba(124,110,249,0.3)] hover:shadow-[0_0_40px_rgba(124,110,249,0.5)] hover:-translate-y-1'}`}
                 >
                   <span className="relative z-10 flex items-center justify-center gap-2">
                     {isSubmitting ? 'Sending Transmission...' : success ? 'Transmission Received ✓' : errorStatus ? 'Transmission Failed - Try Again' : 'Send Message'}
@@ -169,3 +169,4 @@ export default function Contact() {
     </section>
   );
 }
+

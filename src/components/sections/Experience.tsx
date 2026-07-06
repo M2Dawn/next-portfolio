@@ -6,7 +6,7 @@ export default function Experience() {
       
       {/* Background Glows */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-[40%] right-[5%] w-[40%] h-[40%] rounded-full bg-[radial-gradient(circle,rgba(91,141,243,0.06)_0%,transparent_60%)] blur-[100px]"></div>
+        <div className="absolute top-[40%] right-[5%] w-[40%] h-[40%] rounded-full bg-[radial-gradient(circle,rgba(124,110,249,0.06)_0%,transparent_60%)] blur-[100px]"></div>
       </div>
 
       <div className="max-w-[1000px] mx-auto px-6 w-full relative z-10">
@@ -29,7 +29,7 @@ export default function Experience() {
               {/* Glowing Dot with Pulse */}
               <div className="absolute -left-[45px] md:-left-[53px] top-1.5 flex items-center justify-center w-[11px] h-[11px]">
                 <div className="absolute w-[22px] h-[22px] rounded-full bg-brand/30 animate-[ping_3s_cubic-bezier(0,0,0.2,1)_infinite]"></div>
-                <div className="relative w-full h-full rounded-full bg-brand shadow-[0_0_12px_rgba(91,141,243,0.8)] border-2 border-[#050507]"></div>
+                <div className="relative w-full h-full rounded-full bg-brand shadow-[0_0_12px_rgba(124,110,249,0.8)] border-2 border-[#050507]"></div>
               </div>
               
               <div className="group bg-[#0A0A0C] border border-white/5 rounded-2xl p-6 lg:p-8 hover:bg-[#0F0F13] hover:border-brand/20 transition-all duration-300">
@@ -96,3 +96,4 @@ export default function Experience() {
     </section>
   );
 }
+

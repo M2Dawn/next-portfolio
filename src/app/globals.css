@@ -57,10 +57,10 @@
     --color-text-2: #A1A1AA;
     --color-text-3: #52525B;
     --color-text-4: #3F3F46;
-    --color-brand: #5B8DF3;
-    --color-brand-light: #7BA5FF;
-    --color-brand-dim: rgba(91,141,243,0.12);
-    --color-brand-border: rgba(91,141,243,0.25);
+    --color-brand: #7C6EF9;          /* unified violet-indigo — between the old blue and purple */
+    --color-brand-light: #A89FF8;    /* soft lavender for text accents */
+    --color-brand-dim: rgba(124,110,249,0.12);
+    --color-brand-border: rgba(124,110,249,0.25);
     --color-border-1: rgba(255,255,255,0.06);
     --color-border-2: rgba(255,255,255,0.09);
     --color-border-3: rgba(255,255,255,0.16);
@@ -191,12 +191,12 @@
 
 /* Custom Selection Styling */
 ::selection {
-  background-color: rgba(91, 141, 243, 0.3); /* Brand color at 30% opacity */
+  background-color: rgba(124,110,249,0.3);
   color: #ffffff;
 }
 
 ::-moz-selection {
-  background-color: rgba(91, 141, 243, 0.3);
+  background-color: rgba(124,110,249,0.3);
   color: #ffffff;
 }
 
@@ -218,7 +218,7 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #5B8DF3;
+  background-color: #7C6EF9;
 }
 
 /* 1. Film Grain / Noise Overlay */

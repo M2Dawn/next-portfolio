@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -31,7 +31,7 @@ export default function Navbar() {
           }`}
         >
           <Link href="/" className="font-heading text-[1.05rem] font-bold text-white tracking-tight flex items-center gap-3 group" translate="no">
-            <span className="w-2 h-2 rounded-full bg-brand shadow-[0_0_12px_rgba(91,141,243,0.9)] group-hover:scale-150 transition-all duration-300"></span>
+            <span className="w-2 h-2 rounded-full bg-brand shadow-[0_0_12px_rgba(124,110,249,0.9)] group-hover:scale-150 transition-all duration-300"></span>
             Hossam Sabry
           </Link>
           
@@ -106,7 +106,7 @@ export default function Navbar() {
             <li>
               <Link
                 href="/#contact"
-                className="text-[13px] font-bold text-white px-4 py-2 border border-white/10 bg-white/5 rounded-full hover:border-brand/50 hover:bg-brand/10 hover:shadow-[0_0_15px_rgba(91,141,243,0.3)] transition-all mt-4 md:mt-0 inline-block"
+                className="text-[13px] font-bold text-white px-4 py-2 border border-white/10 bg-white/5 rounded-full hover:border-brand/50 hover:bg-brand/10 hover:shadow-[0_0_15px_rgba(124,110,249,0.3)] transition-all mt-4 md:mt-0 inline-block"
                 onClick={(e) => {
                   setMobileMenuOpen(false);
                   if (window.location.pathname === '/') {
@@ -125,3 +125,4 @@ export default function Navbar() {
     </>
   );
 }
+
