@@ -5,53 +5,7 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     <footer className="bg-[#050507] border-t border-white/5 relative overflow-hidden">
-      {/* Grand Finale CTA */}
-      <div className="relative py-24 md:py-32 overflow-hidden border-b border-white/5">
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] md:w-[60%] h-[60%] rounded-full bg-[radial-gradient(circle,rgba(124,110,249,0.15)_0%,transparent_70%)] blur-[100px]"></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_10%,transparent_100%)] opacity-30"></div>
-        </div>
-        
-        <div className="max-w-[800px] mx-auto px-6 w-full relative z-10 flex flex-col items-center text-center">
-          <h2 className="font-heading text-[clamp(2.5rem,5vw,4rem)] font-bold tracking-tight mb-6 text-white leading-tight">
-            Ready to{' '}
-            <span
-              className="animate-gradient-text"
-              style={{
-                backgroundImage: 'linear-gradient(to right, #B8A4FF, #7C6EF9, #B8A4FF)',
-                backgroundSize: '200% auto',
-                WebkitBackgroundClip: 'text',
-                backgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                color: 'transparent',
-              }}
-            >Automate?</span>
-          </h2>
-          <p className="text-[1.1rem] md:text-[1.25rem] text-text-2 mb-10 leading-relaxed font-medium max-w-[600px]">
-            Stop losing hundreds of hours to repetitive modeling tasks. Let&apos;s build a custom toolkit that lets your team focus on engineering, not clicking.
-          </p>
-          <Link 
-            href="/#contact" 
-            onClick={(e) => {
-              if (window.location.pathname === '/') {
-                e.preventDefault();
-                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                window.history.pushState(null, '', '/#contact');
-              }
-            }}
-            className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 md:px-10 md:py-5 rounded-2xl font-black text-white bg-white/5 border border-white/10 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] overflow-hidden shadow-[0_0_40px_rgba(124,110,249,0.2)] hover:shadow-[0_0_80px_rgba(124,110,249,0.4)] hover:-translate-y-1 active:scale-[0.98]"
-          >
-            <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-brand via-violet-400 to-brand opacity-90 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <span className="relative z-10 flex items-center gap-3 text-lg">
-              Start a Conversation
-              {/* Button-in-Button trailing icon */}
-              <span className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-1 group-hover:-translate-y-px group-hover:scale-105 transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </span>
-            </span>
-          </Link>
-        </div>
-      </div>
+
 
       {/* Standard Footer */}
       <div className="max-w-[1200px] mx-auto px-6 py-8 w-full flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">

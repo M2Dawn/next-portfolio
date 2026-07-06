@@ -93,10 +93,10 @@ export default function Contact() {
               Have a BIM automation challenge? Need custom Revit tooling for your team? I want to hear about it.
             </p>
             
-            <div className="flex flex-col sm:flex-row items-center gap-4 mb-10 w-full max-w-[500px]">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10 w-full max-w-[500px]">
               <button
                 onClick={copyEmail}
-                className="group flex-1 w-full inline-flex items-center justify-center gap-3 px-6 py-3.5 bg-white/5 border border-white/10 rounded-xl text-[14px] font-semibold text-white hover:border-brand/40 hover:bg-brand/10 transition-all shadow-sm"
+                className="group w-full sm:w-[80%] inline-flex items-center justify-center gap-3 px-6 py-3.5 bg-white/5 border border-white/10 rounded-xl text-[14px] font-semibold text-white hover:border-brand/40 hover:bg-brand/10 transition-all shadow-sm"
                 title="Click to copy email"
               >
                 <div className="w-6 h-6 rounded bg-brand/20 flex items-center justify-center text-brand group-hover:bg-brand group-hover:text-white transition-colors">
@@ -104,14 +104,6 @@ export default function Contact() {
                 </div>
                 {copied ? 'Copied!' : 'e.hossamsabry@gmail.com'}
               </button>
-
-              <a
-                href="mailto:e.hossamsabry@gmail.com"
-                className="group flex-1 w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-transparent border border-white/10 rounded-xl text-[14px] font-semibold text-text-2 hover:text-white hover:bg-white/5 hover:border-white/20 transition-all"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="opacity-70 group-hover:opacity-100 transition-opacity"><path d="M7 7h10v10M7 17 17 7"/></svg>
-                Email Client
-              </a>
             </div>
 
             <div className="flex gap-4">
