@@ -86,7 +86,7 @@ export default function Contact() {
             </div>
             
             <h2 className="font-heading text-[clamp(2.5rem,5vw,4rem)] font-bold tracking-tight mb-6 text-white leading-tight">
-              Let&apos;s Build<br />Something.
+              Let&apos;s <span className="text-brand">Build<br />Something.</span>
             </h2>
             
             <p className="text-[1.1rem] text-text-2 mb-10 leading-relaxed font-medium max-w-[500px]">
