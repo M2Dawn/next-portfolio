@@ -1,7 +1,7 @@
 ---
 title: "Dynamo Scripting for BIM Engineers: A Practical Guide"
 description: "Learn how to use Dynamo for Revit to automate repetitive BIM tasks, manipulate model data at scale, and bridge the gap between design intent and execution — no prior coding experience required."
-date: "2026-04-22"
+date: "2026-03-15"
 tags: ["Dynamo", "BIM", "Automation"]
 ---
 

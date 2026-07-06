@@ -1,7 +1,7 @@
 ---
 title: "Getting Started with Revit API Development"
 description: "A comprehensive, hands-on guide to building your first Revit plugin using C# and the Revit API — from environment setup to reading, modifying, and filtering model data."
-date: "2026-03-15"
+date: "2025-12-08"
 tags: ["Revit API", "C#", "Tutorials"]
 ---
 
