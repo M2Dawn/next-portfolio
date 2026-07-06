@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Link from 'next/link';
 
@@ -13,8 +13,8 @@ export default function Footer() {
         </div>
         
         <div className="max-w-[800px] mx-auto px-6 w-full relative z-10 flex flex-col items-center text-center">
-          <h2 className="font-heading text-[clamp(2.5rem,5vw,4rem)] font-bold tracking-tight mb-6 text-white leading-tight">
-            Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand via-blue-300 to-brand bg-[length:200%_auto] animate-auroraWave">Automate?</span>
+          <h2 className="text-[clamp(2.5rem,5vw,4rem)] font-black tracking-tight mb-6 text-white drop-shadow-lg leading-tight">
+            Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand via-purple-400 to-brand bg-[length:200%_auto] animate-auroraWave">Automate?</span>
           </h2>
           <p className="text-[1.1rem] md:text-[1.25rem] text-text-2 mb-10 leading-relaxed font-medium max-w-[600px]">
             Stop losing hundreds of hours to repetitive modeling tasks. Let&apos;s build a custom toolkit that lets your team focus on engineering, not clicking.
@@ -30,7 +30,7 @@ export default function Footer() {
             }}
             className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 md:px-10 md:py-5 rounded-2xl font-black text-white bg-white/5 border border-white/10 transition-all duration-300 overflow-hidden shadow-[0_0_40px_rgba(91,141,243,0.2)] hover:shadow-[0_0_80px_rgba(91,141,243,0.4)] hover:-translate-y-1"
           >
-            <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-brand via-blue-400 to-brand opacity-80 group-hover:opacity-100 transition-opacity"></div>
+            <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-brand via-[#8b5cf6] to-brand opacity-80 group-hover:opacity-100 transition-opacity"></div>
             <span className="relative z-10 flex items-center gap-3 text-lg">
               Start a Conversation
               <svg className="transform group-hover:translate-x-1 transition-transform" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>

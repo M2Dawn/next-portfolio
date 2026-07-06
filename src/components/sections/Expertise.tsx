@@ -1,10 +1,10 @@
-import Reveal from '@/components/ui/Reveal';
+﻿import Reveal from '@/components/ui/Reveal';
 import SpotlightCard from '@/components/ui/SpotlightCard';
 export default function Expertise() {
   return (
     <section className="relative py-32 bg-[#050507] overflow-hidden border-t border-white/5" id="expertise">
       
-      {/* Deep Background Glows — blue only */}
+      {/* Deep Background Glows ΓÇö blue only */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-[10%] left-[20%] w-[40%] h-[40%] rounded-full bg-[radial-gradient(circle,rgba(91,141,243,0.07)_0%,transparent_60%)] blur-[120px]"></div>
         <div className="absolute bottom-[20%] right-[10%] w-[30%] h-[50%] rounded-full bg-[radial-gradient(circle,rgba(91,141,243,0.05)_0%,transparent_60%)] blur-[100px]"></div>
@@ -24,11 +24,10 @@ export default function Expertise() {
           </p>
         </Reveal>
 
-        <Reveal delay={100}>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-start">
           
-          {/* Card 1 — default position */}
-          <div className="h-full">
+          {/* Card 1 ΓÇö default position */}
+          <Reveal delay={100} className="h-full">
             <SpotlightCard className="h-full rounded-[1.5rem]" spotlightColor="rgba(91, 141, 243, 0.15)">
               <div className="group bg-[#0A0A0C] border border-white/5 rounded-[1.5rem] p-8 lg:p-10 flex flex-col hover:bg-[#0F0F13] hover:border-brand/30 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(91,141,243,0.12)] transition-all duration-500 h-full relative overflow-hidden">
               <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:via-brand/50 transition-colors duration-500"></div>
@@ -38,7 +37,7 @@ export default function Expertise() {
               </div>
               
               <div className="w-full h-1 bg-white/5 rounded-full mb-8 overflow-hidden">
-                <div className="h-full bg-gradient-to-r from-brand to-blue-400 relative" style={{ width: '92%' }}>
+                <div className="h-full bg-gradient-to-r from-brand to-purple-500 relative" style={{ width: '92%' }}>
                   <div className="absolute inset-0 bg-white/20 animate-[scanlineMove_2s_linear_infinite]"></div>
                 </div>
               </div>
@@ -60,20 +59,20 @@ export default function Expertise() {
               </div>
             </div>
             </SpotlightCard>
-          </div>
+          </Reveal>
 
-          {/* Card 2 — elevated upward to break the flat grid */}
-          <div className="h-full md:-translate-y-6">
-            <SpotlightCard className="h-full rounded-[1.5rem]" spotlightColor="rgba(91, 141, 243, 0.15)">
-              <div className="group bg-[#0A0A0C] border border-white/5 rounded-[1.5rem] p-8 lg:p-10 flex flex-col hover:bg-[#0F0F13] hover:border-brand/30 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(91,141,243,0.12)] transition-all duration-500 h-full relative overflow-hidden">
-              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:via-brand/50 transition-colors duration-500"></div>
+          {/* Card 2 ΓÇö elevated upward to break the flat grid */}
+          <Reveal delay={200} className="h-full md:-translate-y-6">
+            <SpotlightCard className="h-full rounded-[1.5rem]" spotlightColor="rgba(168, 85, 247, 0.15)">
+              <div className="group bg-[#0A0A0C] border border-white/5 rounded-[1.5rem] p-8 lg:p-10 flex flex-col hover:bg-[#0F0F13] hover:border-purple-500/30 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(168,85,247,0.12)] transition-all duration-500 h-full relative overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:via-purple-500/50 transition-colors duration-500"></div>
               
-              <div className="w-14 h-14 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-white mb-8 group-hover:scale-110 group-hover:text-brand transition-all duration-500 group-hover:shadow-[0_0_20px_rgba(91,141,243,0.2)]">
+              <div className="w-14 h-14 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-white mb-8 group-hover:scale-110 group-hover:text-purple-400 transition-all duration-500 group-hover:shadow-[0_0_20px_rgba(168,85,247,0.2)]">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
               </div>
               
               <div className="w-full h-1 bg-white/5 rounded-full mb-8 overflow-hidden">
-                <div className="h-full bg-gradient-to-r from-brand to-blue-300 relative" style={{ width: '96%' }}></div>
+                <div className="h-full bg-gradient-to-r from-purple-500 to-pink-500 relative" style={{ width: '96%' }}></div>
               </div>
               
               <h3 className="font-heading text-xl font-bold text-white mb-4">Visual Programming</h3>
@@ -88,9 +87,9 @@ export default function Expertise() {
               </div>
             </div>
             </SpotlightCard>
-          </div>
+          </Reveal>
 
-          <div className="h-full">
+          <Reveal delay={300} className="h-full">
             <SpotlightCard className="h-full rounded-[1.5rem]" spotlightColor="rgba(6, 182, 212, 0.15)">
               <div className="group bg-[#0A0A0C] border border-white/5 rounded-[1.5rem] p-8 lg:p-10 flex flex-col hover:bg-[#0F0F13] hover:border-cyan-500/30 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(6,182,212,0.12)] transition-all duration-500 h-full relative overflow-hidden">
               <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:via-cyan-500/50 transition-colors duration-500"></div>
@@ -115,10 +114,9 @@ export default function Expertise() {
               </div>
             </div>
             </SpotlightCard>
-          </div>
+          </Reveal>
 
         </div>
-        </Reveal>
       </div>
     </section>
   );
