@@ -1,8 +1,10 @@
 'use client';
 
 import Link from 'next/link';
-import WpfSimulation from '@/components/ui/WpfSimulation';
+import dynamic from 'next/dynamic';
 import Reveal from '@/components/ui/Reveal';
+
+const WpfSimulation = dynamic(() => import('@/components/ui/WpfSimulation'), { ssr: false });
 
 export default function Hero() {
   return (

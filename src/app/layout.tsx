@@ -36,6 +36,9 @@ export const metadata: Metadata = {
     locale: 'en_US',
     type: 'website',
   },
+  alternates: {
+    canonical: 'https://hossam-aec.vercel.app',
+  },
   twitter: {
     card: 'summary_large_image',
     title: 'Hossam Sabry | BIM Automation Engineer',

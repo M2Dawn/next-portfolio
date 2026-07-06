@@ -95,10 +95,10 @@ export default function Navbar() {
 
       {/* Mobile Full-Screen Overlay — cinematic expansion */}
       <div
-        className={`fixed inset-0 z-40 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] md:hidden ${
+        className={`fixed inset-0 z-40 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] md:hidden backdrop-blur-2xl ${
           mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
-        style={{ backdropFilter: mobileMenuOpen ? 'blur(24px)' : 'blur(0px)', background: 'rgba(5,5,7,0.92)' }}
+        style={{ background: 'rgba(5,5,7,0.92)' }}
       >
         <div className="flex flex-col items-center justify-center h-full gap-3">
           {/* Staggered nav links */}

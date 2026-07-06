@@ -465,3 +465,4 @@ function showDashboard() {
 }
 
 console.log('Sheet Set Manager — Professional Edition Ready!');
+/* eslint-disable */

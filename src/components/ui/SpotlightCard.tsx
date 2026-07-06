@@ -10,7 +10,6 @@ interface SpotlightCardProps {
 export default function SpotlightCard({ children, className = "", spotlightColor = "rgba(91, 141, 243, 0.15)" }: SpotlightCardProps) {
   const divRef = useRef<HTMLDivElement>(null);
   const [isFocused, setIsFocused] = useState(false);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
   const [opacity, setOpacity] = useState(0);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -18,8 +17,11 @@ export default function SpotlightCard({ children, className = "", spotlightColor
 
     const div = divRef.current;
     const rect = div.getBoundingClientRect();
-
-    setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    div.style.setProperty('--mouse-x', `${x}px`);
+    div.style.setProperty('--mouse-y', `${y}px`);
   };
 
   const handleFocus = () => {
@@ -54,7 +56,7 @@ export default function SpotlightCard({ children, className = "", spotlightColor
         className="pointer-events-none absolute -inset-px transition duration-300 z-0"
         style={{
           opacity,
-          background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 40%)`,
+          background: `radial-gradient(600px circle at var(--mouse-x, 0px) var(--mouse-y, 0px), ${spotlightColor}, transparent 40%)`,
         }}
       />
       <div className="relative z-10 h-full">{children}</div>

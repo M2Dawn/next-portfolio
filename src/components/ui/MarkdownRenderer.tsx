@@ -18,6 +18,7 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
         components={{
           // Code blocks — high-impact reveal is justified here
           code(props) {
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
             const { children, className, node, ...rest } = props;
             const match = /language-(\w+)/.exec(className || '');
             return match ? (

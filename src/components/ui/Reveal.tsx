@@ -24,11 +24,17 @@ export default function Reveal({ children, className = '', delay = 0, threshold 
       { root: null, rootMargin: '0px', threshold }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    const currentRef = ref.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
-    return () => observer.disconnect();
-  }, []);
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+      observer.disconnect();
+    };
+  }, [threshold]);
 
   return (
     <div
