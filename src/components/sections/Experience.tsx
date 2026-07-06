@@ -37,17 +37,17 @@ export default function Experience() {
               {/* Double-Bezel Card */}
               <div className="p-[3px] rounded-[1.5rem] bg-white/[0.02] ring-1 ring-white/[0.05]">
                 <div className="group rounded-[calc(1.5rem-3px)] bg-transparent border border-transparent p-6 lg:p-8 hover:bg-[var(--color-bg-card)] hover:border-white/5 transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]">
-                  <p className="text-[13px] font-mono font-semibold text-brand mb-2">Apr 2025 &mdash; Present</p>
-                  <h3 className="text-xl font-bold mb-1 text-white">BIM Automation Engineer</h3>
+                  <p className="text-[13px] font-mono font-semibold text-text-3 mb-2 group-hover:text-text-2 transition-colors">Apr 2025 &mdash; Present</p>
+                  <h3 className="text-xl font-bold mb-1 text-white/90 group-hover:text-white transition-colors">BIM Automation Engineer</h3>
                   <p className="text-[15px] text-text-2 mb-4 font-medium">Independent Consultant</p>
                   <p className="text-[15px] text-text-3 leading-relaxed mb-6">
                     Architecting custom Revit API plugins, scalable Dynamo systems, and full-stack coordination dashboards for leading AEC firms. Focused strictly on replacing manual data entry with production-grade automation.
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1.5 bg-[#050507] border border-white/10 rounded-md text-[11px] font-mono text-text-2">Revit API</span>
-                    <span className="px-3 py-1.5 bg-[#050507] border border-white/10 rounded-md text-[11px] font-mono text-text-2">C# / WPF</span>
-                    <span className="px-3 py-1.5 bg-[#050507] border border-white/10 rounded-md text-[11px] font-mono text-text-2">Dynamo</span>
-                    <span className="px-3 py-1.5 bg-[#050507] border border-white/10 rounded-md text-[11px] font-mono text-text-2">React / Next.js</span>
+                    <span className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-md text-[11px] font-mono text-text-3 group-hover:text-text-2">Revit API</span>
+                    <span className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-md text-[11px] font-mono text-text-3 group-hover:text-text-2">C# / WPF</span>
+                    <span className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-md text-[11px] font-mono text-text-3 group-hover:text-text-2">Dynamo</span>
+                    <span className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-md text-[11px] font-mono text-text-3 group-hover:text-text-2">React / Next.js</span>
                   </div>
                 </div>
               </div>
