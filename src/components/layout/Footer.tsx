@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 
 export default function Footer() {
@@ -19,6 +21,13 @@ export default function Footer() {
           </p>
           <Link 
             href="/#contact" 
+            onClick={(e) => {
+              if (window.location.pathname === '/') {
+                e.preventDefault();
+                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                window.history.pushState(null, '', '/#contact');
+              }
+            }}
             className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 md:px-10 md:py-5 rounded-2xl font-black text-white bg-white/5 border border-white/10 transition-all duration-300 overflow-hidden shadow-[0_0_40px_rgba(91,141,243,0.2)] hover:shadow-[0_0_80px_rgba(91,141,243,0.4)] hover:-translate-y-1"
           >
             <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-brand via-[#8b5cf6] to-brand opacity-80 group-hover:opacity-100 transition-opacity"></div>

@@ -51,17 +51,50 @@ export default function Navbar() {
             } md:flex flex-col md:flex-row absolute md:static top-[70px] left-4 right-4 md:w-auto bg-[#0A0A0C]/95 md:bg-transparent backdrop-blur-xl md:backdrop-blur-none border border-white/10 md:border-transparent rounded-2xl md:rounded-none items-center gap-2 md:gap-8 list-none p-6 md:p-0 shadow-2xl md:shadow-none transition-all`}
           >
             <li>
-              <Link href="/#work" className="text-[13px] font-semibold text-text-2 hover:text-white transition-colors" onClick={() => setMobileMenuOpen(false)}>
+              <Link 
+                href="/#work" 
+                className="text-[13px] font-semibold text-text-2 hover:text-white transition-colors" 
+                onClick={(e) => {
+                  setMobileMenuOpen(false);
+                  if (window.location.pathname === '/') {
+                    e.preventDefault();
+                    document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' });
+                    window.history.pushState(null, '', '/#work');
+                  }
+                }}
+              >
                 Work
               </Link>
             </li>
             <li>
-              <Link href="/#expertise" className="text-[13px] font-semibold text-text-2 hover:text-white transition-colors" onClick={() => setMobileMenuOpen(false)}>
+              <Link 
+                href="/#expertise" 
+                className="text-[13px] font-semibold text-text-2 hover:text-white transition-colors" 
+                onClick={(e) => {
+                  setMobileMenuOpen(false);
+                  if (window.location.pathname === '/') {
+                    e.preventDefault();
+                    document.getElementById('expertise')?.scrollIntoView({ behavior: 'smooth' });
+                    window.history.pushState(null, '', '/#expertise');
+                  }
+                }}
+              >
                 Expertise
               </Link>
             </li>
             <li>
-              <Link href="/#experience" className="text-[13px] font-semibold text-text-2 hover:text-white transition-colors" onClick={() => setMobileMenuOpen(false)}>
+              <Link 
+                href="/#experience" 
+                className="text-[13px] font-semibold text-text-2 hover:text-white transition-colors" 
+                onClick={(e) => {
+                  setMobileMenuOpen(false);
+                  if (window.location.pathname === '/') {
+                    e.preventDefault();
+                    document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' });
+                    window.history.pushState(null, '', '/#experience');
+                  }
+                }}
+              >
                 Experience
               </Link>
             </li>
@@ -74,7 +107,14 @@ export default function Navbar() {
               <Link
                 href="/#contact"
                 className="text-[13px] font-bold text-white px-4 py-2 border border-white/10 bg-white/5 rounded-full hover:border-brand/50 hover:bg-brand/10 hover:shadow-[0_0_15px_rgba(91,141,243,0.3)] transition-all mt-4 md:mt-0 inline-block"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={(e) => {
+                  setMobileMenuOpen(false);
+                  if (window.location.pathname === '/') {
+                    e.preventDefault();
+                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                    window.history.pushState(null, '', '/#contact');
+                  }
+                }}
               >
                 Let&apos;s Talk
               </Link>

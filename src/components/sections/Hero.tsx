@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import WpfSimulation from '@/components/ui/WpfSimulation';
 import Reveal from '@/components/ui/Reveal';
@@ -57,7 +59,17 @@ export default function Hero() {
                   <svg className="transform group-hover:translate-x-1 transition-transform" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </span>
               </Link>
-              <Link href="#contact" className="inline-flex items-center gap-2 px-6 py-3.5 md:px-8 md:py-4 rounded-xl font-semibold text-text-1 hover:text-white bg-transparent border border-border-1 hover:bg-white/10 transition-all duration-300">
+              <Link 
+                href="/#contact" 
+                onClick={(e) => {
+                  if (window.location.pathname === '/') {
+                    e.preventDefault();
+                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                    window.history.pushState(null, '', '/#contact');
+                  }
+                }}
+                className="inline-flex items-center gap-2 px-6 py-3.5 md:px-8 md:py-4 rounded-xl font-semibold text-text-1 hover:text-white bg-transparent border border-border-1 hover:bg-white/10 transition-all duration-300"
+              >
                 Get in Touch
               </Link>
             </div>
