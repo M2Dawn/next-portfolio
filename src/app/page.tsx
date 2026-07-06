@@ -1,7 +1,6 @@
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import Hero from '@/components/sections/Hero';
-import Marquee from '@/components/sections/Marquee';
 import Work from '@/components/sections/Work';
 import Expertise from '@/components/sections/Expertise';
 import Experience from '@/components/sections/Experience';
@@ -13,7 +12,6 @@ export default function Home() {
       <Navbar />
       <main id="main">
         <Hero />
-        <Marquee />
         <Work />
         <Expertise />
         <Experience />
