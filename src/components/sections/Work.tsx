@@ -216,6 +216,22 @@ export default function Work() {
             </SpotlightCard>
           </Reveal>
         </div>
+
+        {/* Post-section CTA — interactive-portfolio skill: "After projects: Secondary CTA" */}
+        <Reveal delay={200}>
+          <div className="mt-16 flex flex-col items-center gap-4 text-center">
+            <p className="text-text-3 text-sm font-medium">Interested in working together?</p>
+              <Link
+              href="/#contact"
+              className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full font-bold text-white border border-white/10 bg-white/5 hover:border-brand/50 hover:bg-brand/10 hover:shadow-[0_0_30px_rgba(124,110,249,0.3)] transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]"
+            >
+              Let&apos;s Work Together
+              <span className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center group-hover:translate-x-0.5 transition-transform duration-300">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
+            </Link>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

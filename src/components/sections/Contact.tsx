@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
@@ -92,7 +92,7 @@ export default function Contact() {
                 Have a BIM automation challenge? Need custom Revit tooling for your team? I want to hear about it.
               </p>
               
-              <div className="mb-10">
+              <div className="mb-6">
                 <button
                   onClick={copyEmail}
                   className="group inline-flex items-center gap-3 px-6 py-3.5 bg-white/5 border border-white/10 rounded-xl text-[14px] font-semibold text-white hover:border-brand/40 hover:bg-brand/10 transition-all shadow-[0_0_20px_rgba(0,0,0,0.2)]"
@@ -103,6 +103,16 @@ export default function Contact() {
                   </div>
                   {copied ? '✓ Copied to Clipboard!' : 'e.hossamsabry@gmail.com'}
                 </button>
+              </div>
+              {/* mailto: link — interactive-portfolio skill requirement */}
+              <div className="mb-10">
+                <a
+                  href="mailto:e.hossamsabry@gmail.com"
+                  className="inline-flex items-center gap-2 text-[13px] text-text-3 hover:text-brand-light transition-colors duration-300 font-medium"
+                >
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M7 7h10v10M7 17 17 7"/></svg>
+                  Open in email client
+                </a>
               </div>
               
               <div className="flex gap-4 mt-auto">

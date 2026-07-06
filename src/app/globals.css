@@ -66,11 +66,15 @@
     --color-border-3: rgba(255,255,255,0.16);
     --color-success: #4ADE80;
 
-    --animate-aurora: aurora 6s ease infinite;
-    --animate-neonFlicker: neonFlicker 3s ease-in-out infinite;
-    --animate-holographicShift: holographicShift 8s ease infinite;
-    --animate-meshMove: meshMove 20s ease-in-out infinite;
-    --animate-auroraWave: auroraWave 15s ease-in-out infinite;
+    /* Premium spring easing — used globally */
+    --ease-premium: cubic-bezier(0.32, 0.72, 0, 1);
+    --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+
+    --animate-aurora: aurora 6s cubic-bezier(0.32,0.72,0,1) infinite;
+    --animate-neonFlicker: neonFlicker 3s cubic-bezier(0.32,0.72,0,1) infinite;
+    --animate-holographicShift: holographicShift 8s cubic-bezier(0.32,0.72,0,1) infinite;
+    --animate-meshMove: meshMove 20s cubic-bezier(0.32,0.72,0,1) infinite;
+    --animate-auroraWave: auroraWave 15s cubic-bezier(0.32,0.72,0,1) infinite;
     --animate-scanlineMove: scanlineMove 8s linear infinite;
 
     @keyframes aurora {

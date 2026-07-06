@@ -6,7 +6,7 @@ import Reveal from '@/components/ui/Reveal';
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden pt-20 pb-20 md:pt-20 md:pb-32 min-h-[100svh] flex items-center bg-[#050507]" id="hero">
+    <section className="relative overflow-hidden pt-24 pb-20 md:pt-28 md:pb-32 min-h-[100dvh] flex items-center bg-[#050507]" id="hero">
       
       {/* Background ΓÇö Blueprint AEC Grid */}
       <div className="absolute inset-0 z-0 pointer-events-none">
@@ -44,6 +44,10 @@ export default function Hero() {
           </Reveal>
           
           <Reveal delay={100}>
+            {/* Name — per interactive-portfolio Hero Formula: [Your name] */}
+            <p className="text-[13px] font-mono font-semibold tracking-[0.15em] uppercase text-text-3 mb-3">
+              Hossam Sabry
+            </p>
             {/* Main Headline */}
             <h1 className="font-heading text-[clamp(2.25rem,4vw,3.75rem)] font-bold leading-[1.08] tracking-[-0.03em] mb-6 text-white">
               Building the Tools <br className="hidden lg:block" />
@@ -75,11 +79,15 @@ export default function Hero() {
           <Reveal delay={300}>
             {/* Call to Actions */}
             <div className="flex flex-wrap items-center gap-4 mb-10 md:mb-12">
-              <Link href="#work" className="group relative inline-flex items-center justify-center gap-3 px-6 py-3.5 md:px-8 md:py-4 rounded-xl font-bold text-white bg-white/5 border border-white/10 transition-all duration-300 overflow-hidden shadow-[0_0_40px_rgba(124,110,249,0.15)] hover:shadow-[0_0_60px_rgba(124,110,249,0.35)] hover:-translate-y-1">
-                <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-brand via-violet-400 to-brand opacity-90 group-hover:opacity-100 transition-opacity"></div>
-                <span className="relative z-10 flex items-center gap-2">
+              {/* Button-in-Button CTA */}
+              <Link href="#work" className="group relative inline-flex items-center justify-center gap-3 px-6 py-3.5 md:px-8 md:py-4 rounded-xl font-bold text-white bg-white/5 border border-white/10 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] overflow-hidden shadow-[0_0_40px_rgba(124,110,249,0.15)] hover:shadow-[0_0_60px_rgba(124,110,249,0.35)] hover:-translate-y-1">
+                <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-brand via-violet-400 to-brand opacity-90 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <span className="relative z-10 flex items-center gap-2.5">
                   Explore My Work
-                  <svg className="transform group-hover:translate-x-1 transition-transform" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  {/* Nested icon circle — Button-in-Button */}
+                  <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-0.5 group-hover:-translate-y-px transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)]">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </span>
                 </span>
               </Link>
               <Link 
