@@ -35,8 +35,8 @@ export default function Experience() {
               </div>
               
               {/* Double-Bezel Card */}
-              <div className="p-[3px] rounded-[1.5rem] bg-white/[0.03] ring-1 ring-white/[0.08]">
-                <div className="group rounded-[calc(1.5rem-3px)] bg-[var(--color-bg-card)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.08)] border border-white/5 p-6 lg:p-8 hover:bg-[#0F0F13] hover:border-brand/20 transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]">
+              <div className="p-[3px] rounded-[1.5rem] bg-white/[0.02] ring-1 ring-white/[0.05]">
+                <div className="group rounded-[calc(1.5rem-3px)] bg-transparent border border-transparent p-6 lg:p-8 hover:bg-[var(--color-bg-card)] hover:border-white/5 transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]">
                   <p className="text-[13px] font-mono font-semibold text-brand mb-2">Apr 2025 &mdash; Present</p>
                   <h3 className="text-xl font-bold mb-1 text-white">BIM Automation Engineer</h3>
                   <p className="text-[15px] text-text-2 mb-4 font-medium">Independent Consultant</p>
@@ -60,8 +60,8 @@ export default function Experience() {
               <div className="absolute -left-[43px] md:-left-[51px] top-1.5 w-[7px] h-[7px] rounded-full bg-white/20 border-2 border-[#050507]"></div>
               
               {/* Double-Bezel Card */}
-              <div className="p-[3px] rounded-[1.5rem] bg-white/[0.03] ring-1 ring-white/[0.08]">
-                <div className="group rounded-[calc(1.5rem-3px)] bg-[var(--color-bg-card)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.08)] border border-white/5 p-6 lg:p-8 hover:bg-[#0F0F13] hover:border-brand/20 transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]">
+              <div className="p-[3px] rounded-[1.5rem] bg-white/[0.02] ring-1 ring-white/[0.05]">
+                <div className="group rounded-[calc(1.5rem-3px)] bg-transparent border border-transparent p-6 lg:p-8 hover:bg-[var(--color-bg-card)] hover:border-white/5 transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]">
                   <p className="text-[13px] font-mono font-semibold text-text-3 mb-2 group-hover:text-text-2 transition-colors">Jan 2025 &mdash; Present</p>
                   <h3 className="text-xl font-bold mb-1 text-white/90 group-hover:text-white transition-colors">BIM Coordinator</h3>
                   <p className="text-[15px] text-text-2 mb-4 font-medium">Multi-discipline Construction Projects</p>
@@ -84,8 +84,8 @@ export default function Experience() {
               <div className="absolute -left-[43px] md:-left-[51px] top-1.5 w-[7px] h-[7px] rounded-full bg-white/20 border-2 border-[#050507]"></div>
               
               {/* Double-Bezel Card */}
-              <div className="p-[3px] rounded-[1.5rem] bg-white/[0.03] ring-1 ring-white/[0.08]">
-                <div className="group rounded-[calc(1.5rem-3px)] bg-[var(--color-bg-card)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.08)] border border-white/5 p-6 lg:p-8 hover:bg-[#0F0F13] hover:border-brand/20 transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]">
+              <div className="p-[3px] rounded-[1.5rem] bg-white/[0.02] ring-1 ring-white/[0.05]">
+                <div className="group rounded-[calc(1.5rem-3px)] bg-transparent border border-transparent p-6 lg:p-8 hover:bg-[var(--color-bg-card)] hover:border-white/5 transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]">
                   <p className="text-[13px] font-mono font-semibold text-text-3 mb-2 group-hover:text-text-2 transition-colors">Jul 2024 &mdash; Dec 2024</p>
                   <h3 className="text-xl font-bold mb-1 text-white/90 group-hover:text-white transition-colors">BIM Technician</h3>
                   <p className="text-[15px] text-text-2 mb-4 font-medium">Engineering Consultancy</p>
