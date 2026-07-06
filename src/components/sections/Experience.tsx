@@ -31,7 +31,7 @@ export default function Experience() {
               {/* Glowing Dot with Pulse */}
               <div className="absolute -left-[45px] md:-left-[53px] top-1.5 flex items-center justify-center w-[11px] h-[11px]">
                 <div className="absolute w-[22px] h-[22px] rounded-full bg-brand/30 animate-[ping_3s_cubic-bezier(0,0,0.2,1)_infinite]"></div>
-                <div className="relative w-full h-full rounded-full bg-brand shadow-[0_0_12px_rgba(124,110,249,0.8)] border-2 border-[#050507]"></div>
+                <div className="relative w-full h-full rounded-full bg-brand shadow-[0_0_12px_rgba(74,114,176,0.8)] border-2 border-[#050507]"></div>
               </div>
               
               {/* Double-Bezel Card */}

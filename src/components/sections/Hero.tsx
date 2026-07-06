@@ -14,16 +14,16 @@ export default function Hero() {
       <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Subtle glows */}
         <div className="absolute -top-[20%] -left-[10%] w-[55%] h-[55%] rounded-full bg-[radial-gradient(circle,var(--color-glow-subtle)_0%,transparent_65%)] blur-[100px]"></div>
-        <div className="absolute top-[30%] -right-[5%] w-[45%] h-[45%] rounded-full bg-[radial-gradient(circle,rgba(124,110,249,0.02)_0%,transparent_65%)] blur-[120px]"></div>
+        <div className="absolute top-[30%] -right-[5%] w-[45%] h-[45%] rounded-full bg-[radial-gradient(circle,rgba(74,114,176,0.02)_0%,transparent_65%)] blur-[120px]"></div>
       </div>
       {/* Blueprint grid — architectural crosshair pattern */}
       <div className="absolute inset-0 pointer-events-none z-0"
         style={{
           backgroundImage: `
-            linear-gradient(to right, rgba(124,110,249,0.03) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(124,110,249,0.03) 1px, transparent 1px),
-            linear-gradient(to right, rgba(124,110,249,0.015) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(124,110,249,0.015) 1px, transparent 1px)
+            linear-gradient(to right, rgba(74,114,176,0.03) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(74,114,176,0.03) 1px, transparent 1px),
+            linear-gradient(to right, rgba(74,114,176,0.015) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(74,114,176,0.015) 1px, transparent 1px)
           `,
           backgroundSize: '96px 96px, 96px 96px, 24px 24px, 24px 24px',
           maskImage: 'radial-gradient(ellipse 90% 80% at 50% 50%, #000 20%, transparent 100%)'
@@ -36,7 +36,7 @@ export default function Hero() {
         <div className="w-full max-w-[650px] lg:max-w-full relative">
           <Reveal>
             {/* Status Pill */}
-            <div className="inline-flex items-center gap-2.5 text-[11px] md:text-[13px] font-semibold tracking-wide text-text-1 mb-6 md:mb-8 px-4 py-2 rounded-full bg-white/[0.03] border border-white/10 backdrop-blur-xl shadow-[0_0_20px_rgba(124,110,249,0.1)] hover:bg-white/10 transition-colors cursor-default">
+            <div className="inline-flex items-center gap-2.5 text-[11px] md:text-[13px] font-semibold tracking-wide text-text-1 mb-6 md:mb-8 px-4 py-2 rounded-full bg-white/[0.03] border border-white/10 backdrop-blur-xl shadow-[0_0_20px_rgba(74,114,176,0.1)] hover:bg-white/10 transition-colors cursor-default">
               <span className="relative flex h-2.5 w-2.5 mr-1">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500 shadow-[0_0_8px_#4ade80]"></span>
@@ -55,7 +55,7 @@ export default function Hero() {
                 <span
                   className="relative animate-gradient-text"
                   style={{
-                    backgroundImage: 'linear-gradient(to right, #B8A4FF, #7C6EF9, #B8A4FF)',
+                    backgroundImage: 'linear-gradient(to right, #7596C6, #4A72B0, #7596C6)',
                     backgroundSize: '200% auto',
                     WebkitBackgroundClip: 'text',
                     backgroundClip: 'text',
@@ -79,8 +79,8 @@ export default function Hero() {
             {/* Call to Actions */}
             <div className="flex flex-wrap items-center gap-4 mb-10 md:mb-12">
               {/* Button-in-Button CTA */}
-              <Link href="#work" className="group relative inline-flex items-center justify-center gap-3 px-6 py-3.5 md:px-8 md:py-4 rounded-xl font-bold text-white bg-white/5 border border-white/10 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] overflow-hidden shadow-[0_0_40px_rgba(124,110,249,0.15)] hover:shadow-[0_0_60px_rgba(124,110,249,0.35)] hover:-translate-y-1">
-                <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-brand via-violet-400 to-brand opacity-90 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <Link href="#work" className="group relative inline-flex items-center justify-center gap-3 px-6 py-3.5 md:px-8 md:py-4 rounded-xl font-bold text-white bg-white/5 border border-white/10 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] overflow-hidden shadow-[0_0_40px_rgba(74,114,176,0.15)] hover:shadow-[0_0_60px_rgba(74,114,176,0.35)] hover:-translate-y-1">
+                <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-brand via-blue-400 to-brand opacity-90 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <span className="relative z-10 flex items-center gap-2.5">
                   Explore My Work
                   {/* Nested icon circle — Button-in-Button */}
@@ -130,7 +130,7 @@ export default function Hero() {
         <div className="w-full relative mt-16 lg:mt-0 flex flex-col gap-6">
           <Reveal delay={300} className="relative z-10">
             {/* Glow behind mockup */}
-            <div className="absolute -inset-4 bg-gradient-to-b from-brand/20 via-violet-500/10 to-transparent rounded-[2rem] blur-2xl opacity-60 pointer-events-none"></div>
+            <div className="absolute -inset-4 bg-gradient-to-b from-brand/20 via-blue-500/10 to-transparent rounded-[2rem] blur-2xl opacity-60 pointer-events-none"></div>
             
             <WpfSimulation />
           </Reveal>
@@ -142,7 +142,7 @@ export default function Hero() {
               <span>6&ndash;8 hrs <span className="text-brand-light mx-1">&rarr;</span> 2 hrs</span>
             </div>
             <div className="flex items-center gap-2.5 bg-[#121216]/90 border border-white/10 rounded-xl px-4 py-2 text-xs font-bold text-text-1 shadow-lg backdrop-blur-xl">
-              <svg className="text-purple-400" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <svg className="text-blue-400" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
               <span>Autodesk Certified</span>
             </div>
             <div className="flex items-center gap-2.5 bg-[#121216]/90 border border-white/10 rounded-xl px-4 py-2 text-xs font-bold text-text-1 shadow-lg backdrop-blur-xl">

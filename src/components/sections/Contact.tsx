@@ -73,7 +73,7 @@ export default function Contact() {
     <section className="relative py-32 bg-[#050507] overflow-hidden border-t border-white/5" id="contact">
       {/* Centered Spotlight Glow */}
       <div className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center">
-        <div className="w-[800px] h-[800px] rounded-full bg-[radial-gradient(circle,rgba(124,110,249,0.04)_0%,transparent_50%)] blur-[100px]"></div>
+        <div className="w-[800px] h-[800px] rounded-full bg-[radial-gradient(circle,rgba(74,114,176,0.04)_0%,transparent_50%)] blur-[100px]"></div>
       </div>
 
       <div className="max-w-[800px] mx-auto px-6 w-full relative z-10 flex flex-col items-center">
@@ -148,7 +148,7 @@ export default function Contact() {
                 <button 
                   type="submit" 
                   disabled={isSubmitting || success}
-                  className={`relative overflow-hidden w-full py-4 rounded-xl font-bold text-white transition-all duration-300 mt-4 ${success ? 'bg-green-500 shadow-[0_0_20px_rgba(74,222,128,0.2)]' : errorStatus ? 'bg-red-500' : 'bg-brand hover:bg-brand-light shadow-[0_0_30px_rgba(124,110,249,0.2)] hover:shadow-[0_0_40px_rgba(124,110,249,0.4)] hover:-translate-y-0.5'}`}
+                  className={`relative overflow-hidden w-full py-4 rounded-xl font-bold text-white transition-all duration-300 mt-4 ${success ? 'bg-green-500 shadow-[0_0_20px_rgba(74,222,128,0.2)]' : errorStatus ? 'bg-red-500' : 'bg-brand hover:bg-brand-light shadow-[0_0_30px_rgba(74,114,176,0.2)] hover:shadow-[0_0_40px_rgba(74,114,176,0.4)] hover:-translate-y-0.5'}`}
                 >
                   <span className="relative z-10 flex items-center justify-center gap-2">
                     {isSubmitting ? 'Sending Transmission...' : success ? 'Transmission Received ✓' : errorStatus ? 'Transmission Failed - Try Again' : 'Send Message'}
