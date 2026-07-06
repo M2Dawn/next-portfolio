@@ -28,7 +28,7 @@ export default function Work() {
           <Reveal className="col-span-full h-full">
             {/* Card 1: BIM Automation Tool - FULL WIDTH */}
             <SpotlightCard className="h-full rounded-[1.5rem]" spotlightColor="rgba(91, 141, 243, 0.15)">
-              <Link href="/case-studies/bim-automation-tool" className="group h-full bg-[#0A0A0C] border border-white/5 rounded-[1.5rem] p-8 lg:p-12 hover:bg-[#0F0F13] hover:border-white/10 hover:-translate-y-1 transition-all duration-500 flex flex-col md:flex-row gap-10 relative overflow-hidden shadow-2xl">
+              <a href="/case-studies/bim-automation-tool.html" className="group h-full bg-[#0A0A0C] border border-white/5 rounded-[1.5rem] p-8 lg:p-12 hover:bg-[#0F0F13] hover:border-white/10 hover:-translate-y-1 transition-all duration-500 flex flex-col md:flex-row gap-10 relative overflow-hidden shadow-2xl">
               
               {/* Card Hover Glow */}
               <div className="absolute -inset-px bg-gradient-to-b from-brand/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[1.5rem] pointer-events-none"></div>
@@ -66,7 +66,7 @@ export default function Work() {
               <div className="flex-1 relative min-h-[300px] md:min-h-0 rounded-2xl overflow-hidden border border-white/5 bg-[#121216] group-hover:border-white/10 transition-colors shadow-inner">
                 <Image src="/images/bim-tool-hero.png" alt="BIM Automation Tool Interface" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-top opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
               </div>
-            </Link>
+            </a>
             </SpotlightCard>
           </Reveal>
 
@@ -106,7 +106,7 @@ export default function Work() {
           <Reveal className="col-span-1 md:col-span-5 h-full" delay={200}>
             {/* Card 3: Dynamo Scripts - RIGHT HALF */}
             <SpotlightCard className="h-full rounded-[1.5rem]" spotlightColor="rgba(250, 204, 21, 0.15)">
-              <Link href="/case-studies/dynamo-scripts" className="group h-full bg-[#0A0A0C] border border-white/5 rounded-[1.5rem] p-8 lg:p-10 flex flex-col relative overflow-hidden hover:bg-[#0F0F13] hover:border-white/10 hover:-translate-y-1 transition-all duration-500 shadow-2xl">
+              <a href="/case-studies/dynamo-scripts.html" className="group h-full bg-[#0A0A0C] border border-white/5 rounded-[1.5rem] p-8 lg:p-10 flex flex-col relative overflow-hidden hover:bg-[#0F0F13] hover:border-white/10 hover:-translate-y-1 transition-all duration-500 shadow-2xl">
               <div className="flex items-center justify-between mb-4">
                 <span className="text-[10px] font-mono uppercase tracking-[0.15em] text-yellow-400 font-bold">Dynamo &middot; Python</span>
                 <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white group-hover:bg-yellow-500 group-hover:border-yellow-500 transition-all duration-300 group-hover:scale-110">
@@ -135,7 +135,7 @@ export default function Work() {
               <div className="relative h-[220px] mt-auto rounded-xl overflow-hidden border border-white/5 bg-[#121216] group-hover:border-white/10 transition-colors shadow-inner -mx-4 -mb-4 lg:-mx-6 lg:-mb-6">
                 <Image src="/images/dynamo-hero.png" alt="Dynamo Scripts" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-top opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
               </div>
-            </Link>
+            </a>
             </SpotlightCard>
           </Reveal>
 
