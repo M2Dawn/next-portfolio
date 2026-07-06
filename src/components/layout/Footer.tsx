@@ -13,15 +13,11 @@ export default function Footer() {
           &copy; {new Date().getFullYear()} Hossam Sabry &middot; BIM Automation Engineer
         </p>
         
-        <nav className="flex flex-wrap items-center justify-center gap-2" aria-label="Footer navigation">
-          <Link href="/#work" className="px-3 py-1.5 text-[13px] font-semibold text-text-3 hover:text-white hover:bg-white/5 rounded-md transition-all">Work</Link>
-          <Link href="/#expertise" className="px-3 py-1.5 text-[13px] font-semibold text-text-3 hover:text-white hover:bg-white/5 rounded-md transition-all">Expertise</Link>
-          <Link href="/#experience" className="px-3 py-1.5 text-[13px] font-semibold text-text-3 hover:text-white hover:bg-white/5 rounded-md transition-all">Experience</Link>
-          <Link href="/blog" className="px-3 py-1.5 text-[13px] font-semibold text-text-3 hover:text-white hover:bg-white/5 rounded-md transition-all">Blog</Link>
-          
-          <div className="w-px h-4 bg-white/10 mx-2 hidden md:block"></div>
-          
-
+        <nav className="flex flex-wrap items-center justify-center gap-4 md:gap-6" aria-label="Footer navigation">
+          <Link href="/#work" className="text-[14px] font-medium text-text-3 hover:text-white transition-colors">Work</Link>
+          <Link href="/#expertise" className="text-[14px] font-medium text-text-3 hover:text-white transition-colors">Expertise</Link>
+          <Link href="/#experience" className="text-[14px] font-medium text-text-3 hover:text-white transition-colors">Experience</Link>
+          <Link href="/blog" className="text-[14px] font-medium text-text-3 hover:text-white transition-colors">Blog</Link>
         </nav>
       </div>
     </footer>
