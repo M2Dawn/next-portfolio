@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import emailjs from '@emailjs/browser';
 import Reveal from '@/components/ui/Reveal';
 
 export default function Contact() {
@@ -42,6 +41,7 @@ export default function Contact() {
     setErrorStatus(false);
 
     try {
+      const emailjs = (await import('@emailjs/browser')).default;
       await emailjs.send(
         'service_f6ehl85',
         'template_dks5llc',
