@@ -1,4 +1,4 @@
-﻿const items = [
+const items = [
   "REVIT API",
   "DYNAMO",
   "C#",
