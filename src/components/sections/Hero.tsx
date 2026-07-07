@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import { sendGAEvent } from '@next/third-parties/google';
 import Reveal from '@/components/ui/Reveal';
 
 const WpfSimulation = dynamic(() => import('@/components/ui/WpfSimulation'), { ssr: false });
@@ -79,7 +80,7 @@ export default function Hero() {
             {/* Call to Actions */}
             <div className="flex flex-wrap items-center gap-4 mb-10 md:mb-12">
               {/* Button-in-Button CTA */}
-              <Link href="#work" className="group relative inline-flex items-center justify-center gap-3 px-6 py-3.5 md:px-8 md:py-4 rounded-xl font-bold text-white bg-white/5 border border-white/10 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] overflow-hidden shadow-[0_0_40px_rgba(34,72,163,0.15)] hover:shadow-[0_0_60px_rgba(34,72,163,0.35)] hover:-translate-y-1">
+              <Link onClick={() => sendGAEvent('event', 'hero_cta_click', { button: 'explore_work' })} href="#work" className="group relative inline-flex items-center justify-center gap-3 px-6 py-3.5 md:px-8 md:py-4 rounded-xl font-bold text-white bg-white/5 border border-white/10 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] overflow-hidden shadow-[0_0_40px_rgba(34,72,163,0.15)] hover:shadow-[0_0_60px_rgba(34,72,163,0.35)] hover:-translate-y-1">
                 <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-brand via-blue-400 to-brand opacity-90 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <span className="relative z-10 flex items-center gap-2.5">
                   Explore My Work
@@ -92,6 +93,7 @@ export default function Hero() {
               <Link 
                 href="/#contact" 
                 onClick={(e) => {
+                  sendGAEvent('event', 'hero_cta_click', { button: 'get_in_touch' });
                   if (window.location.pathname === '/') {
                     e.preventDefault();
                     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
