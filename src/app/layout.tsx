@@ -53,7 +53,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn(bodyFont.variable, headingFont.variable)}>
+    <html lang="en" className={cn(bodyFont.variable, headingFont.variable)} data-scroll-behavior="smooth">
       <body className={bodyFont.className}>
         <div className="bg-noise"></div>
         {children}
