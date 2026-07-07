@@ -67,14 +67,14 @@ export default function Experience() {
               <div className="absolute -left-[43px] md:-left-[51px] top-1.5 w-[7px] h-[7px] rounded-full bg-white/20 border-2 border-[#050507]"></div>
               
               {/* Premium Spotlight Card */}
-              <SpotlightCard className="rounded-[1.5rem]" spotlightColor="rgba(34,72,163,0.12)">
-                <div className="group bg-[#0A0A0C] border border-white/5 rounded-[1.5rem] p-6 lg:p-8 hover:bg-[#0F0F13] hover:border-white/10 transition-all duration-500 shadow-xl">
+              <SpotlightCard className="rounded-[1.5rem]" spotlightColor="rgba(34,72,163,0.15)">
+                <div className="group bg-[#0A0A0C] border border-white/5 rounded-[1.5rem] p-6 lg:p-8 hover:bg-[#0F0F13] hover:border-brand/30 transition-all duration-500 shadow-xl">
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-4">
                     <div>
-                      <h3 className="text-xl font-bold text-white/90 group-hover:text-white transition-colors duration-300">BIM Coordinator</h3>
+                      <h3 className="text-xl font-bold text-white group-hover:text-brand transition-colors duration-300">BIM Coordinator</h3>
                       <p className="text-[14px] text-text-2 font-medium">Multi-discipline Construction Projects</p>
                     </div>
-                    <span className="self-start shrink-0 text-[10px] font-mono font-semibold uppercase tracking-wider text-text-3 bg-white/5 border border-white/10 px-3 py-1 rounded-full group-hover:text-text-2 group-hover:border-white/20 transition-all duration-300">
+                    <span className="self-start shrink-0 text-[10px] font-mono font-bold uppercase tracking-wider text-brand bg-brand/10 border border-brand/20 px-3 py-1 rounded-full">
                       Jan 2025 — Present
                     </span>
                   </div>
@@ -82,9 +82,9 @@ export default function Experience() {
                     Directing clash detection workflows, MEP coordination, and data extraction pipelines across large-scale commercial projects using Navisworks and custom telemetry tools.
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-[10px] font-mono text-text-3 group-hover:text-text-2 group-hover:border-white/10 transition-all duration-300">Navisworks</span>
-                    <span className="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-[10px] font-mono text-text-3 group-hover:text-text-2 group-hover:border-white/10 transition-all duration-300">Clash Detection</span>
-                    <span className="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-[10px] font-mono text-text-3 group-hover:text-text-2 group-hover:border-white/10 transition-all duration-300">4D Simulation</span>
+                    <span className="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-[10px] font-mono text-text-2 group-hover:border-brand/20 group-hover:text-text-1 transition-all duration-300">Navisworks</span>
+                    <span className="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-[10px] font-mono text-text-2 group-hover:border-brand/20 group-hover:text-text-1 transition-all duration-300">Clash Detection</span>
+                    <span className="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-[10px] font-mono text-text-2 group-hover:border-brand/20 group-hover:text-text-1 transition-all duration-300">4D Simulation</span>
                   </div>
                 </div>
               </SpotlightCard>
@@ -97,14 +97,14 @@ export default function Experience() {
               <div className="absolute -left-[43px] md:-left-[51px] top-1.5 w-[7px] h-[7px] rounded-full bg-white/20 border-2 border-[#050507]"></div>
               
               {/* Premium Spotlight Card */}
-              <SpotlightCard className="rounded-[1.5rem]" spotlightColor="rgba(34,72,163,0.12)">
-                <div className="group bg-[#0A0A0C] border border-white/5 rounded-[1.5rem] p-6 lg:p-8 hover:bg-[#0F0F13] hover:border-white/10 transition-all duration-500 shadow-xl">
+              <SpotlightCard className="rounded-[1.5rem]" spotlightColor="rgba(34,72,163,0.15)">
+                <div className="group bg-[#0A0A0C] border border-white/5 rounded-[1.5rem] p-6 lg:p-8 hover:bg-[#0F0F13] hover:border-brand/30 transition-all duration-500 shadow-xl">
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-4">
                     <div>
-                      <h3 className="text-xl font-bold text-white/90 group-hover:text-white transition-colors duration-300">BIM Technician</h3>
+                      <h3 className="text-xl font-bold text-white group-hover:text-brand transition-colors duration-300">BIM Technician</h3>
                       <p className="text-[14px] text-text-2 font-medium">Engineering Consultancy</p>
                     </div>
-                    <span className="self-start shrink-0 text-[10px] font-mono font-semibold uppercase tracking-wider text-text-3 bg-white/5 border border-white/10 px-3 py-1 rounded-full group-hover:text-text-2 group-hover:border-white/20 transition-all duration-300">
+                    <span className="self-start shrink-0 text-[10px] font-mono font-bold uppercase tracking-wider text-brand bg-brand/10 border border-brand/20 px-3 py-1 rounded-full">
                       Jul 2024 — Dec 2024
                     </span>
                   </div>
@@ -112,9 +112,9 @@ export default function Experience() {
                     Managed 3D structural modeling and documentation in Revit. Identified manual drafting bottlenecks and developed the initial batch of Python and Dynamo automation scripts that catalyzed the firm&apos;s transition into automated BIM delivery.
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-[10px] font-mono text-text-3 group-hover:text-text-2 group-hover:border-white/10 transition-all duration-300">Revit</span>
-                    <span className="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-[10px] font-mono text-text-3 group-hover:text-text-2 group-hover:border-white/10 transition-all duration-300">Dynamo</span>
-                    <span className="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-[10px] font-mono text-text-3 group-hover:text-text-2 group-hover:border-white/10 transition-all duration-300">Python</span>
+                    <span className="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-[10px] font-mono text-text-2 group-hover:border-brand/20 group-hover:text-text-1 transition-all duration-300">Revit</span>
+                    <span className="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-[10px] font-mono text-text-2 group-hover:border-brand/20 group-hover:text-text-1 transition-all duration-300">Dynamo</span>
+                    <span className="px-3 py-1 bg-white/5 border border-white/5 rounded-full text-[10px] font-mono text-text-2 group-hover:border-brand/20 group-hover:text-text-1 transition-all duration-300">Python</span>
                   </div>
                 </div>
               </SpotlightCard>
