@@ -1,0 +1,552 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BIM Automation Tool - Case Study | Hossam Sabry</title>
+<meta name="description" content="Case study: BIM Automation Tool for Revit - Batch DWG export, intelligent naming, and CSV data extraction saving 40% coordination time.">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="alternate icon" type="image/x-icon" href="../favicon.ico">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MWW9X0CJQF"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-MWW9X0CJQF',{'page_title':'BIM Automation Tool - Case Study','page_path':'/case-studies/bim-automation-tool.html'});
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+--bg-base:#080809;--bg-raised:#0F0F11;--bg-card:#161619;--bg-inset:#1C1C20;
+--text-1:#F2F2F2;--text-2:#A1A1AA;--text-3:#52525B;
+--accent:#5B8DF3;--accent-2:#9B5CF6;--accent-dim:rgba(91,141,243,0.12);
+--accent-border:rgba(91,141,243,0.25);
+--border:rgba(255,255,255,0.09);--border-strong:rgba(255,255,255,0.16);
+--grad:linear-gradient(135deg,#5B8DF3,#9B5CF6);
+--red:#ef4444;--green:#22c55e;
+--font-sans:'Geist','Inter',system-ui,sans-serif;
+--font-mono:'Geist Mono','JetBrains Mono',monospace;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--bg-base);color:var(--text-1);font-family:var(--font-sans);font-size:0.9375rem;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+::selection{background:var(--accent-dim);color:var(--accent);}
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-track{background:var(--bg-base);}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:99px;}
+a{color:var(--accent);text-decoration:none;transition:color .2s ease;}
+a:hover{color:#7BA5FF;}
+img{max-width:100%;display:block;}
+
+/* Progress Bar */
+.progress-bar{position:fixed;top:0;left:0;height:2px;background:var(--grad);z-index:200;width:0;transition:width .1s linear;}
+
+/* Nav */
+nav{position:fixed;top:0;left:0;right:0;height:60px;z-index:100;display:flex;align-items:center;background:rgba(8,8,9,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 32px;}
+.nav-inner{max-width:1100px;margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between;}
+.nav-brand{font-size:0.9375rem;font-weight:600;color:var(--text-1);display:flex;align-items:center;gap:8px;}
+.nav-brand span{color:var(--text-3);}
+.nav-links{display:flex;gap:24px;list-style:none;}
+.nav-links a{font-size:0.875rem;color:var(--text-3);font-weight:400;transition:color .2s ease;position:relative;}
+.nav-links a:hover,.nav-links a.active{color:var(--text-1);}
+.nav-links a.active::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--accent);border-radius:99px;}
+
+/* Hero */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;position:relative;overflow:hidden;}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(120px);pointer-events:none;opacity:0.5;}
+.hero-orb-1{width:600px;height:600px;background:radial-gradient(circle,rgba(91,141,243,0.15),transparent);top:-10%;left:-5%;}
+.hero-orb-2{width:500px;height:500px;background:radial-gradient(circle,rgba(155,92,246,0.12),transparent);bottom:-10%;right:-5%;}
+.hero-orb-3{width:400px;height:400px;background:radial-gradient(circle,rgba(91,141,243,0.08),transparent);top:40%;left:50%;transform:translateX(-50%);}
+
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:99px;font-size:0.8125rem;font-weight:500;color:var(--accent);margin-bottom:24px;}
+.pulse-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(0.7);}}
+
+.hero h1{font-size:clamp(2.5rem,5.5vw,4rem);font-weight:700;line-height:1.1;letter-spacing:-0.03em;margin-bottom:20px;color:var(--text-1);}
+.hero h1 .grad{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-sub{font-size:1.0625rem;color:var(--text-2);max-width:580px;margin:0 auto 40px;line-height:1.7;}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:680px;width:100%;}
+.stat-card{background:rgba(22,22,25,0.7);backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:14px;padding:24px;transition:transform .2s ease,box-shadow .2s ease;}
+.stat-card:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(91,141,243,0.1);}
+.stat-num{font-size:2rem;font-weight:700;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-0.03em;font-variant-numeric:tabular-nums;}
+.stat-label{font-size:0.8125rem;color:var(--text-3);font-family:var(--font-mono);margin-top:4px;}
+.scroll-indicator{margin-top:48px;display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--text-3);font-size:0.75rem;font-family:var(--font-mono);animation:bobble 2s ease-in-out infinite;}
+.scroll-indicator .arrow{width:16px;height:16px;border-right:1.5px solid var(--text-3);border-bottom:1.5px solid var(--text-3);transform:rotate(45deg);}
+@keyframes bobble{0%,100%{transform:translateY(0);}50%{transform:translateY(6px);}}
+
+/* Sections */
+.section{max-width:900px;margin:0 auto;padding:96px 24px;position:relative;z-index:1;}
+.section h2{font-size:2rem;font-weight:700;letter-spacing:-0.025em;margin-bottom:16px;}
+.section h3{font-size:1.375rem;font-weight:600;letter-spacing:-0.02em;margin:48px 0 16px;color:var(--text-1);}
+.section p{color:var(--text-2);font-size:1rem;line-height:1.75;margin-bottom:16px;}
+.section-divider{height:1px;background:var(--border);max-width:200px;margin:0 auto;}
+
+/* Callout boxes */
+.callout{background:rgba(22,22,25,0.6);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin:24px 0;}
+.callout-red{border-left:3px solid var(--red);}
+.callout-green{border-left:3px solid var(--green);}
+.callout-blue{border-left:3px solid var(--accent);}
+.callout h4{font-size:1.0625rem;font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:8px;color:var(--text-1);}
+.callout ul{list-style:none;padding:0;}
+.callout li{padding-left:20px;position:relative;margin-bottom:8px;color:var(--text-2);font-size:0.9375rem;}
+.callout li::before{content:"→";position:absolute;left:0;color:var(--accent);font-weight:600;}
+
+/* Before/After */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:32px 0;}
+.compare-panel{border-radius:14px;padding:24px;border:1px solid var(--border);}
+.compare-before{background:rgba(239,68,68,0.04);border-color:rgba(239,68,68,0.2);}
+.compare-after{background:rgba(34,197,94,0.04);border-color:rgba(34,197,94,0.2);}
+.compare-panel h5{font-size:0.875rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:16px;font-family:var(--font-mono);}
+.compare-before h5{color:var(--red);}
+.compare-after h5{color:var(--green);}
+.compare-item{display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;font-size:0.9rem;color:var(--text-2);}
+.compare-icon{flex-shrink:0;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.7rem;margin-top:2px;}
+.compare-before .compare-icon{background:rgba(239,68,68,0.15);color:var(--red);}
+.compare-after .compare-icon{background:rgba(34,197,94,0.15);color:var(--green);}
+
+/* Feature Grid */
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0;}
+.feature-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:20px;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;}
+.feature-card:hover{transform:translateY(-3px);border-color:var(--accent-border);box-shadow:0 8px 24px rgba(91,141,243,0.08);}
+.feature-card .icon{width:36px;height:36px;border-radius:8px;background:var(--accent-dim);border:1px solid var(--accent-border);display:flex;align-items:center;justify-content:center;font-size:1rem;margin-bottom:12px;}
+.feature-card h5{font-size:0.9375rem;font-weight:600;margin-bottom:6px;color:var(--text-1);}
+.feature-card p{font-size:0.8125rem;color:var(--text-2);margin:0;line-height:1.6;}
+
+/* Tech pills */
+.tech-pills{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0;}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;background:var(--bg-card);border:1px solid var(--border);border-radius:99px;font-size:0.8125rem;color:var(--text-1);font-weight:500;font-family:var(--font-mono);}
+
+/* Code Block */
+.code-wrap{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;margin:24px 0;overflow:hidden;position:relative;}
+.code-titlebar{display:flex;align-items:center;gap:6px;padding:10px 16px;border-bottom:1px solid var(--border);background:rgba(255,255,255,0.02);}
+.dot{width:10px;height:10px;border-radius:50%;}
+.dot-r{background:#FF5F57;}.dot-y{background:#FFBD2E;}.dot-g{background:#28CA41;}
+.code-filename{margin-left:auto;font-size:0.6875rem;font-family:var(--font-mono);color:var(--text-3);}
+.code-body{display:flex;overflow-x:auto;position:relative;}
+.code-body::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.03) 2px,rgba(0,0,0,0.03) 4px);pointer-events:none;}
+.line-nums{padding:16px 0;text-align:right;user-select:none;border-right:1px solid var(--border);flex-shrink:0;}
+.line-nums span{display:block;padding:0 12px;font-family:var(--font-mono);font-size:0.8125rem;line-height:1.7;color:var(--text-3);}
+.code-content{padding:16px 20px;flex:1;white-space:pre;overflow-x:auto;}
+.code-content code{font-family:var(--font-mono);font-size:0.8125rem;line-height:1.7;color:var(--text-2);}
+.ck{color:#C792EA;}.cs{color:#89DDFF;}.cm{color:#546E7A;font-style:italic;}.cn{color:#82AAFF;}.cv{color:#EEFFFF;}.cst{color:#C3E88D;}
+
+/* Timeline */
+.timeline{position:relative;padding-left:28px;margin:24px 0;}
+.timeline::before{content:'';position:absolute;left:3px;top:6px;bottom:6px;width:1px;background:var(--border);}
+.tl-item{position:relative;margin-bottom:32px;}
+.tl-item:last-child{margin-bottom:0;}
+.tl-item::before{content:'';position:absolute;left:-28px;top:6px;width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px var(--bg-base);}
+.tl-item h5{font-size:0.9375rem;font-weight:600;color:var(--text-1);margin-bottom:4px;}
+.tl-item p{font-size:0.875rem;color:var(--text-2);margin:0;}
+
+/* Architecture */
+.arch-flow{display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;margin:24px 0;padding:32px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:14px;}
+.arch-node{padding:12px 20px;background:var(--bg-raised);border:1px solid var(--accent-border);border-radius:10px;font-size:0.8125rem;font-weight:600;color:var(--accent);text-align:center;font-family:var(--font-mono);}
+.arch-arrow{color:var(--text-3);font-size:1.25rem;padding:0 8px;}
+
+/* Challenge Cards */
+.challenge-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:24px;margin:16px 0;}
+.challenge-card h5{font-size:0.9375rem;font-weight:600;color:var(--text-1);margin-bottom:12px;}
+.challenge-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;}
+.challenge-row div{font-size:0.875rem;color:var(--text-2);line-height:1.6;}
+.challenge-row strong{display:block;font-size:0.75rem;font-weight:600;color:var(--text-3);text-transform:uppercase;letter-spacing:0.05em;font-family:var(--font-mono);margin-bottom:4px;}
+
+/* Counter animation */
+.counter-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:32px 0;}
+.counter-box{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center;}
+.counter-num{font-size:1.75rem;font-weight:700;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-variant-numeric:tabular-nums;}
+.counter-label{font-size:0.75rem;color:var(--text-3);font-family:var(--font-mono);margin-top:4px;}
+
+/* Footer */
+footer{padding:32px 24px;border-top:1px solid var(--border);text-align:center;}
+footer a{color:var(--text-2);font-size:0.875rem;}
+footer p{font-size:0.8125rem;color:var(--text-3);font-family:var(--font-mono);margin-top:8px;}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1);}
+.reveal.visible{opacity:1;transform:none;}
+
+/* Responsive */
+@media(max-width:960px){
+.hero-stats{grid-template-columns:repeat(3,1fr);gap:12px;}
+.features-grid{grid-template-columns:repeat(2,1fr);}
+.counter-grid{grid-template-columns:repeat(2,1fr);}
+.challenge-row{grid-template-columns:1fr;}
+.nav-links{display:none;}
+}
+@media(max-width:640px){
+.hero-stats{grid-template-columns:1fr;}
+.compare{grid-template-columns:1fr;}
+.features-grid{grid-template-columns:1fr;}
+.arch-flow{flex-direction:column;}
+.arch-arrow{transform:rotate(90deg);}
+.counter-grid{grid-template-columns:1fr 1fr;}
+nav{padding:0 16px;}
+.section{padding:64px 16px;}
+}
+
+    /* Animated Gradient Keyframes */
+    @keyframes gradient-x {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    .animate-gradient-text {
+      background: linear-gradient(to right, #60A5FA, #A78BFA, #F472B6, #60A5FA);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradient-x 4s linear infinite;
+    }
+
+    /* Film Grain Overlay */
+    .bg-noise {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      pointer-events: none; z-index: 9999; opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+</style>
+
+</head><body>
+<div class="bg-noise"></div>
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Nav -->
+<nav>
+<div class="nav-inner">
+<a href="/" class="nav-brand" aria-label="Back to portfolio"><span>←</span> Hossam Sabry</a>
+<div class="nav-links">
+<a href="#overview" aria-label="Overview section">Overview</a>
+<a href="#solution" aria-label="Solution section">Solution</a>
+<a href="#results" aria-label="Results section">Results</a>
+<a href="#technical" aria-label="Technical section">Technical</a>
+</div>
+</div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+<div class="hero-orb hero-orb-1"></div>
+<div class="hero-orb hero-orb-2"></div>
+<div class="hero-orb hero-orb-3"></div>
+<div class="hero-badge reveal"><span class="pulse-dot"></span>Case Study</div>
+<h1 class="reveal"><span class="grad">BIM Automation</span> Tool<br>for Revit</h1>
+<p class="hero-sub reveal">Replacing a 6–8 hour manual export cycle with a single-click Revit API add-in — intelligent batch processing and automated data extraction for multi-discipline coordination.</p>
+<div class="hero-stats reveal">
+<div class="stat-card">
+<div class="stat-num animate-gradient-text" data-count="40" data-prefix="~" data-suffix="%">~40%</div>
+<div class="stat-label">Time Saved</div>
+</div>
+<div class="stat-card">
+<div class="stat-num animate-gradient-text" data-count="500" data-suffix="+">500+</div>
+<div class="stat-label">Views Exported</div>
+</div>
+<div class="stat-card">
+<div class="stat-num animate-gradient-text" data-count="95" data-prefix="~" data-suffix="%">~95%</div>
+<div class="stat-label">Error Reduction</div>
+</div>
+</div>
+<div class="scroll-indicator reveal">
+<span>Scroll</span>
+<div class="arrow"></div>
+</div>
+</section>
+
+<!-- Overview -->
+<section id="overview" class="section">
+<h2 class="reveal">Project Overview</h2>
+<p class="reveal">In large-scale construction projects, coordination between architectural, structural, and MEP disciplines requires constant exchange of drawings and data. Traditional manual export processes were consuming significant team resources and introducing errors that rippled through the entire project lifecycle.</p>
+
+<div class="callout callout-red reveal">
+<h4>The Challenge</h4>
+<ul>
+<li>Manual export of 200+ views per coordination cycle taking 6–8 hours</li>
+<li>Inconsistent naming conventions causing file management chaos</li>
+<li>Schedule data extraction requiring tedious copy-paste operations</li>
+<li>High error rates in data transfer — estimated 15–20% required rework</li>
+<li>Delayed coordination cycles impacting project timelines</li>
+</ul>
+</div>
+
+<div class="compare reveal">
+<div class="compare-panel compare-before">
+<h5>✕ Before</h5>
+<div class="compare-item"><span class="compare-icon">✕</span><span>6–8 hours of manual exports per cycle</span></div>
+<div class="compare-item"><span class="compare-icon">✕</span><span>Inconsistent naming across disciplines</span></div>
+<div class="compare-item"><span class="compare-icon">✕</span><span>15–20% rework rate from data errors</span></div>
+<div class="compare-item"><span class="compare-icon">✕</span><span>Bi-weekly coordination only</span></div>
+<div class="compare-item"><span class="compare-icon">✕</span><span>No progress tracking or logging</span></div>
+</div>
+<div class="compare-panel compare-after">
+<h5>✓ After</h5>
+<div class="compare-item"><span class="compare-icon">✓</span><span>45 minutes — single-click batch export</span></div>
+<div class="compare-item"><span class="compare-icon">✓</span><span>Automated naming by discipline &amp; type</span></div>
+<div class="compare-item"><span class="compare-icon">✓</span><span>&lt;2% error rate with full logging</span></div>
+<div class="compare-item"><span class="compare-icon">✓</span><span>Weekly coordination meetings enabled</span></div>
+<div class="compare-item"><span class="compare-icon">✓</span><span>Real-time progress &amp; error reports</span></div>
+</div>
+</div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- Solution -->
+<section id="solution" class="section">
+<h2 class="reveal">The Solution</h2>
+<p class="reveal">I developed a custom Revit add-in using C# and the Revit API that automates the entire export workflow. The tool intelligently processes views in batches, applies consistent naming conventions, and extracts schedule data directly to structured CSV files.</p>
+
+<div class="callout callout-green reveal">
+<h4>Key Features</h4>
+<ul>
+<li>Batch export of views to DWG with customizable templates</li>
+<li>Intelligent naming system based on view type and discipline</li>
+<li>Automated schedule data extraction to CSV format</li>
+<li>Progress tracking and comprehensive error logging</li>
+<li>User-friendly WPF interface requiring minimal training</li>
+</ul>
+</div>
+
+<h3 class="reveal">Features Breakdown</h3>
+<div class="features-grid">
+<div class="feature-card reveal"><div class="icon"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg></div><h5>Smart Filtering</h5><p>Automatically identifies exportable views and filters out irrelevant content based on discipline rules.</p></div>
+<div class="feature-card reveal"><div class="icon"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></div><h5>Custom Naming</h5><p>Generates consistent file names based on configurable project standards and discipline prefixes.</p></div>
+<div class="feature-card reveal"><div class="icon"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><h5>Data Export</h5><p>Extracts schedule data to CSV with proper formatting, headers, and data validation.</p></div>
+<div class="feature-card reveal"><div class="icon"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div><h5>Batch Processing</h5><p>Handles hundreds of views efficiently with real-time progress tracking and status updates.</p></div>
+<div class="feature-card reveal"><div class="icon"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h5>Error Handling</h5><p>Comprehensive logging with graceful failure recovery — never halts the entire batch.</p></div>
+<div class="feature-card reveal"><div class="icon"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div><h5>Configurable</h5><p>Customizable settings for different project requirements without code changes.</p></div>
+</div>
+
+<h3 class="reveal">Tech Stack</h3>
+<div class="tech-pills reveal">
+<span class="pill">C#</span>
+<span class="pill">Revit API 2023</span>
+<span class="pill">WPF</span>
+<span class="pill">.NET 4.8</span>
+<span class="pill">CSV Helper</span>
+</div>
+
+<div class="code-wrap reveal">
+<div class="code-titlebar">
+<span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+<span class="code-filename">ExportService.cs</span>
+</div>
+<div class="code-body">
+<div class="line-nums"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span></div>
+<div class="code-content"><code><span class="cm">// Batch export views to DWG format</span>
+<span class="ck">public</span> <span class="ck">void</span> <span class="cn">ExportViewsToDWG</span>(List&lt;View&gt; views, <span class="ck">string</span> outputPath)
+{
+    <span class="ck">using</span> (Transaction trans = <span class="ck">new</span> Transaction(doc, <span class="cst">"Export Views"</span>))
+    {
+        trans.Start();
+
+        <span class="ck">foreach</span> (<span class="ck">var</span> view <span class="ck">in</span> views)
+        {
+            <span class="ck">var</span> fileName = <span class="cn">GenerateFileName</span>(view);
+            <span class="ck">var</span> exportOpts = <span class="ck">new</span> DWGExportOptions();
+            doc.Export(outputPath, fileName, exportOpts);
+            <span class="cn">LogProgress</span>(view.Name);
+        }
+        trans.Commit();
+    }
+}</code></div>
+</div>
+</div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- Results -->
+<section id="results" class="section">
+<h2 class="reveal">Results &amp; Impact</h2>
+<p class="reveal">The automation tool transformed the coordination workflow, delivering immediate and measurable benefits to the project team.</p>
+
+<div class="callout callout-blue reveal">
+<h4>Measurable Outcomes</h4>
+<ul>
+<li>Export time reduced from 6–8 hours to 45 minutes</li>
+<li>Error rate decreased from 15–20% to less than 2%</li>
+<li>Processed over 500 views per coordination cycle</li>
+<li>Enabled weekly coordination meetings (previously bi-weekly)</li>
+<li>Saved approximately 120 hours per project phase</li>
+</ul>
+</div>
+
+<div class="counter-grid reveal">
+<div class="counter-box">
+<div class="counter-num animate-gradient-text" data-count="45" data-suffix=" min">0 min</div>
+<div class="counter-label">Export Time</div>
+</div>
+<div class="counter-box">
+<div class="counter-num animate-gradient-text" data-count="2" data-prefix="<" data-suffix="%">0%</div>
+<div class="counter-label">Error Rate</div>
+</div>
+<div class="counter-box">
+<div class="counter-num animate-gradient-text" data-count="500" data-suffix="+">0+</div>
+<div class="counter-label">Views / Cycle</div>
+</div>
+<div class="counter-box">
+<div class="counter-num animate-gradient-text" data-count="120" data-suffix="h">0h</div>
+<div class="counter-label">Saved / Phase</div>
+</div>
+</div>
+
+<h3 class="reveal">Project Timeline</h3>
+<div class="timeline reveal">
+<div class="tl-item">
+<h5>Week 1–2: Discovery &amp; Planning</h5>
+<p>Analyzed existing workflow, identified pain points, and designed solution architecture with stakeholder input.</p>
+</div>
+<div class="tl-item">
+<h5>Week 3–4: Core Development</h5>
+<p>Built batch export functionality and intelligent naming logic using the Revit API.</p>
+</div>
+<div class="tl-item">
+<h5>Week 5–6: WPF Interface</h5>
+<p>Created user-friendly WPF interface with MVVM pattern, progress tracking, and configuration panels.</p>
+</div>
+<div class="tl-item">
+<h5>Week 7–8: Testing &amp; Deployment</h5>
+<p>Conducted user acceptance testing, refined based on feedback, and deployed to the project team.</p>
+</div>
+</div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- Technical -->
+<section id="technical" class="section">
+<h2 class="reveal">Technical Deep Dive</h2>
+
+<h3 class="reveal">Architecture Flow</h3>
+<div class="arch-flow reveal">
+<div class="arch-node">Revit</div>
+<div class="arch-arrow">→</div>
+<div class="arch-node">Add-in Layer</div>
+<div class="arch-arrow">→</div>
+<div class="arch-node">Export Engine</div>
+<div class="arch-arrow">→</div>
+<div class="arch-node">File System</div>
+<div class="arch-arrow">→</div>
+<div class="arch-node">CSV Output</div>
+</div>
+
+<h3 class="reveal">Key Challenges</h3>
+<div class="challenge-card reveal">
+<h5>Challenge 1: Performance Optimization</h5>
+<div class="challenge-row">
+<div><strong>Problem</strong>Initial implementation was slow when processing large view sets (200+ views).</div>
+<div><strong>Solution</strong>Implemented view pre-filtering and parallel processing where possible using async patterns.</div>
+<div><strong>Outcome</strong>Reduced processing time by 60%, handling 500+ views reliably within 45 minutes.</div>
+</div>
+</div>
+<div class="challenge-card reveal">
+<h5>Challenge 2: Naming Consistency</h5>
+<div class="challenge-row">
+<div><strong>Problem</strong>Different disciplines had varying naming conventions causing file management chaos.</div>
+<div><strong>Solution</strong>Created a configurable naming template system with discipline-specific prefixes and view type suffixes.</div>
+<div><strong>Outcome</strong>Zero naming conflicts across all disciplines, fully configurable per project.</div>
+</div>
+</div>
+
+<div class="code-wrap reveal">
+<div class="code-titlebar">
+<span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+<span class="code-filename">BatchProcessor.cs</span>
+</div>
+<div class="code-body">
+<div class="line-nums"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span></div>
+<div class="code-content"><code><span class="cm">// Batch processing with error recovery</span>
+<span class="ck">public</span> <span class="ck">async</span> Task <span class="cn">ProcessBatch</span>(IList&lt;View&gt; views)
+{
+    <span class="ck">int</span> success = 0, failed = 0;
+    <span class="ck">foreach</span> (<span class="ck">var</span> view <span class="ck">in</span> views)
+    {
+        <span class="ck">try</span> {
+            <span class="ck">await</span> <span class="cn">ExportSingle</span>(view);
+            success++;
+            <span class="cn">ReportProgress</span>(success, views.Count);
+        }
+        <span class="ck">catch</span> (Exception ex) {
+            failed++;
+            <span class="cn">Logger</span>.Warn(<span class="cst">$"Skip {view.Name}: {ex.Message}"</span>);
+        }
+    }
+}</code></div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer>
+<a href="/" aria-label="Back to portfolio">← Back to Portfolio</a>
+<p>&copy; 2025 Hossam Sabry · BIM Automation Engineer</p>
+</footer>
+
+<script>
+// Progress bar
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement.scrollHeight-window.innerHeight;
+  const p=(window.scrollY/h)*100;
+  document.getElementById('progressBar').style.width=p+'%';
+});
+
+// IntersectionObserver for reveal animations
+const revealObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revealObs.unobserve(e.target);}});
+},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>revealObs.observe(el));
+
+// Active nav highlighting
+const navLinks=document.querySelectorAll('.nav-links a');
+const sections=document.querySelectorAll('section[id]');
+const navObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const id=e.target.getAttribute('id');
+      navLinks.forEach(l=>{
+        l.classList.toggle('active',l.getAttribute('href')==='#'+id);
+      });
+    }
+  });
+},{threshold:0.2,rootMargin:'-60px 0px -40% 0px'});
+sections.forEach(s=>navObs.observe(s));
+
+// Smooth scroll
+document.querySelectorAll('.nav-links a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){window.scrollTo({top:t.offsetTop-70,behavior:'smooth'});}
+  });
+});
+
+// Animated counters
+function animateCounter(el){
+  const target=parseInt(el.dataset.count)||0;
+  const prefix=el.dataset.prefix||'';
+  const suffix=el.dataset.suffix||'';
+  const duration=1200;
+  const start=performance.now();
+  function tick(now){
+    const elapsed=now-start;
+    const progress=Math.min(elapsed/duration,1);
+    const eased=1-Math.pow(1-progress,3);
+    const current=Math.round(eased*target);
+    el.textContent=prefix+current+suffix;
+    if(progress<1)requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+const counterObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      animateCounter(e.target);
+      counterObs.unobserve(e.target);
+    }
+  });
+},{threshold:0.5});
+document.querySelectorAll('.stat-num[data-count],.counter-num[data-count]').forEach(el=>counterObs.observe(el));
+</script>
+</body>
+</html>
